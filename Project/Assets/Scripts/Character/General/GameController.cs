@@ -1,0 +1,124 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine;
+using Photon.Pun;
+
+public enum States {
+    Play, Pause, Win }
+
+public class GameController : MonoBehaviour
+{
+    public PhotonView phView;
+
+    NoteTrigger noteTrigger;
+
+    FragmentControl fragmentControl;
+    public GameObject win;
+
+    public AudioSource openBookSFX;
+
+    public States states;
+
+    [Header("Pause")]
+    public GameObject pauseBg;
+    bool pauseOn;
+
+    [Header("Notebook")]
+    public GameObject notebook;
+    bool noteOn;
+
+    public bool cursor;
+
+    private void Start() {
+        noteTrigger = FindObjectOfType(typeof(NoteTrigger)) as NoteTrigger;
+        fragmentControl = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
+
+        if (!phView.IsMine)
+            gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        Pause(); Notebook(); ActicedWin();
+
+        if (cursor) {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None; }
+        else if (!cursor) {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; }
+
+        if (!cursor && Input.GetButtonDown("Left Alt"))
+            cursor = true;
+        else if (cursor && Input.GetButtonDown("Left Alt"))
+            cursor = false;
+
+        if(fragmentControl.allFrag)
+        {
+            cursor= true;
+            states = States.Pause;
+        }
+    }
+
+    private void ActicedWin()
+    {
+        if (fragmentControl.allFrag)
+        {
+            cursor = true;
+            states = States.Pause;
+
+            win.SetActive(true);
+        }
+    }
+
+    public void Pause()
+    {
+        if (Input.GetButtonDown("P") && !pauseOn)
+        {
+            states = States.Pause;
+            pauseBg.SetActive(true);
+            pauseOn = true;
+
+            cursor = true;
+        }
+        else if (Input.GetButtonDown("P") && pauseOn)
+        {
+            states = States.Play;
+            pauseBg.SetActive(false);
+            pauseOn = false;
+
+            cursor = false;
+        }
+    }
+
+    public void Notebook()
+    {
+        if (Input.GetButtonDown("B") && !noteOn)
+        {
+            openBookSFX.Play();
+
+            states = States.Pause;
+            notebook.SetActive(true);
+            noteOn = true;
+
+            cursor = true;
+        }
+        else if (Input.GetButtonDown("B") && noteOn)
+        {
+            states = States.Play;
+            notebook.SetActive(false);
+            noteOn = false;
+
+            cursor = false;
+
+            if(noteTrigger.notificationOn)
+                noteTrigger.notificationOn = false;
+        }
+    }
+
+    public void CursorOff()
+    {
+        cursor = false;
+    }
+}
