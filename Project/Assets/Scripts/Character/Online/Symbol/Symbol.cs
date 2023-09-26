@@ -10,6 +10,8 @@ public class Symbol : MonoBehaviour
 {
     public Animator anim;
 
+    public AudioSource pressButton;
+
     PhotonView phView;
 
     public bool isSelected;
@@ -31,5 +33,6 @@ public class Symbol : MonoBehaviour
     {
         isSelected = true;
         anim.SetBool("Pressed", isSelected);
+        pressButton.Play();
     }
 }

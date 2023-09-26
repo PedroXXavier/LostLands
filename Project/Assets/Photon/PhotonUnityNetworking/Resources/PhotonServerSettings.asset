@@ -66,6 +66,8 @@ MonoBehaviour:
   - Enable_Luneta_RPC
   - Enable_Shovel_RPC
   - Win
+  - WalkSound
+  - JumpSound
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

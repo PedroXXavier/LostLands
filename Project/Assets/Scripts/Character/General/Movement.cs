@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
     float boredTimer;
 
     public AudioSource WalkSFX;
+    public AudioSource JumpSFX;
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -138,6 +139,11 @@ public class Movement : MonoBehaviour
             case States.Pause:
                 break;
         }
+
+        if (animator.GetFloat("Speed") > 0.1)
+        {
+            phView.RPC("WalkSound", RpcTarget.AllBuffered);
+        }
     }
 
     private void MyInput()
@@ -210,8 +216,6 @@ public class Movement : MonoBehaviour
             {
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-
-                phView.RPC("WalkSound", RpcTarget.AllBuffered);
             }
 
             animator.SetFloat("Speed", flatVel.sqrMagnitude);
@@ -260,6 +264,7 @@ public class Movement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
         animator.SetTrigger("Jump");
+        phView.RPC("JumpSound", RpcTarget.AllBuffered);
     }
 
     private void ResetJump()
@@ -285,9 +290,13 @@ public class Movement : MonoBehaviour
     }
 
     [PunRPC]
-
     private void WalkSound()
     {
         WalkSFX.Play();
+    }
+    [PunRPC]
+    private void JumpSound()
+    {
+        JumpSFX.Play();
     }
 }

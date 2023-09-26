@@ -10,6 +10,8 @@ public class Chest : MonoBehaviour
     PhotonView phView;
     Animator anim;
 
+    public AudioSource openChestSFX, grabFragment;
+
     public bool fragmentActived;
 
     public int life = 3;
@@ -38,7 +40,6 @@ public class Chest : MonoBehaviour
     {
         life--;
 
-        //botar a animação e som do bloco quebrando
         //botar partícula
 
         if (life == 2)
@@ -60,5 +61,8 @@ public class Chest : MonoBehaviour
     {
         anim.SetTrigger("Openned");
         life--;
+
+        openChestSFX.Play();
+        grabFragment.Play();
     }
 }

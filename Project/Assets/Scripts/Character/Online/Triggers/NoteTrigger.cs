@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteTrigger : MonoBehaviour
 {
-    //public AudioSource notificationSound;
+    public AudioSource notificationSound;
 
     public GameObject[] content;
     [SerializeField] bool[] activedContent;
@@ -63,12 +63,15 @@ public class NoteTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("NoteTrigger"))
         {
-            activedContent[other.gameObject.GetComponent<NoteId>().id] = true;
-            notificationOn = true;
+            if (!other.gameObject.GetComponent<NoteId>().actived)
+            {
+                activedContent[other.gameObject.GetComponent<NoteId>().id] = true;
+                notificationOn = true;
 
-            //notificationSound.Play();
+                notificationSound.Play();
+                other.gameObject.GetComponent<NoteId>().actived = true;
+            }
 
-            //som da notificacao
         }
     }
 }

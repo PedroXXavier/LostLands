@@ -5,4 +5,5 @@ using UnityEngine;
 public class NoteId : MonoBehaviour
 {
     public int id;
+    public bool actived;
 }

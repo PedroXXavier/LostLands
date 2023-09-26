@@ -8,6 +8,8 @@ public class Rock : MonoBehaviour
 {
     PhotonView phView;
 
+    public AudioSource destroyRockSFX;
+
     [SerializeField] int life = 3;
 
     void Awake()
@@ -27,6 +29,9 @@ public class Rock : MonoBehaviour
         life--;
 
         if (life <= 0)
+        {
             Destroy(gameObject);
+            destroyRockSFX.Play();
+        }
     }
 }
