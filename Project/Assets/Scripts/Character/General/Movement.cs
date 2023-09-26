@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
     bool bored;
     float boredTimer;
 
+    public AudioSource WalkSFX;
+
     [Header("Crouching")]
     public float crouchSpeed;
     public float crouchYScale;
@@ -208,6 +210,8 @@ public class Movement : MonoBehaviour
             {
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+
+                phView.RPC("WalkSound", RpcTarget.AllBuffered);
             }
 
             animator.SetFloat("Speed", flatVel.sqrMagnitude);
@@ -278,5 +282,12 @@ public class Movement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+
+    [PunRPC]
+
+    private void WalkSound()
+    {
+        WalkSFX.Play();
     }
 }

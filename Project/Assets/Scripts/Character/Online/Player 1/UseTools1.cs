@@ -28,6 +28,7 @@ public class UseTools1 : MonoBehaviour
     public Animator pickaxeAnim;
 
     public AudioSource hitPickaxeSFX;
+    public AudioSource hitNothingSFX;
 
     [Header("Map")]
     public GameObject map; public AudioSource openMapSFX;
@@ -126,7 +127,10 @@ public class UseTools1 : MonoBehaviour
                 pickaxe.SetActive(true); map.SetActive(false);
 
                 if (Input.GetButtonDown("Fire1"))
+                {
                     pickaxeAnim.SetTrigger("Trigger");
+                    hitNothingSFX.Play();
+                }
                 if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract"))
                 {
                     hit.collider.SendMessage("Pickaxe");

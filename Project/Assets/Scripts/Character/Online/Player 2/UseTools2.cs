@@ -27,6 +27,9 @@ public class UseTools2 : MonoBehaviour
     public GameObject shovel; public GameObject handShovel;
     public Animator shovelAnim;
 
+    public AudioSource hitShovelSFX;
+    public AudioSource hitNothingSFX;
+
     [Header("Compass")]
     public GameObject compass; public GameObject hudCompass; public GameObject handCompass;
 
@@ -131,10 +134,14 @@ public class UseTools2 : MonoBehaviour
                 compass.SetActive(false); luneta.SetActive(false); hudCompass.SetActive(false);
 
                 if (Input.GetButtonDown("Fire1"))
+                {
                     shovelAnim.SetTrigger("Trigger");
+                    hitNothingSFX.Play();
+                }
                 if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("ShovelInteract"))
                 {
                     hit.collider.SendMessage("Shovel");
+                    hitShovelSFX.Play();
                 }
 
                 break;
