@@ -1604,6 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  actived: 0
 --- !u!1 &1668798012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5149867988463395643, guid: 745f06fab64725b41b2de4102b87465b, type: 3}
@@ -2073,6 +2074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  actived: 0
 --- !u!82 &1906039289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3400,6 +3402,10 @@ PrefabInstance:
     - target: {fileID: 8361174568125969735, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: sceneViewId
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486171208153035350, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8692416626220938623, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: m_IsTrigger

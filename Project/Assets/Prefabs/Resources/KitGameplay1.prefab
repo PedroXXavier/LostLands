@@ -5998,7 +5998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressE: {fileID: 4387848838359277102}
-  paperHud: {fileID: 8966609446693008400}
+  paperType1: {fileID: 8966609446693008400}
+  paperType2: {fileID: 7679813166946778263}
   paperText: {fileID: 5651805293177475500}
   pickaxe: {fileID: 1592558301619358377}
   handPickaxe: {fileID: 5897824344124529843}

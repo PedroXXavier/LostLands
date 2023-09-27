@@ -9,6 +9,8 @@ public class Paper : MonoBehaviour
     [Header("Content")] 
     public string content;
 
+    public int type;
+
     void Start() {
         gameObject.tag = ("HandInteract"); }
 

@@ -21,7 +21,7 @@ public class UseTools1 : MonoBehaviour
     public GameObject pressE;
 
     [Header("Paper")]
-    public GameObject paperHud; public TMP_Text paperText;
+    public GameObject paperType1, paperType2; public TMP_Text paperText;
 
     [Header("Pickaxe")]
     public GameObject pickaxe; public GameObject handPickaxe;
@@ -68,8 +68,13 @@ public class UseTools1 : MonoBehaviour
                 gc.cursor = true;
                 gc.states = States.Pause;
 
-                paperHud.SetActive(true);
-                paperText.text = hit.collider.gameObject.GetComponent<Paper>().content;
+                if (hit.collider.gameObject.GetComponent<Paper>().type == 1)
+                {
+                    paperType1.SetActive(true);
+                    paperText.text = hit.collider.gameObject.GetComponent<Paper>().content;
+                }
+                if (hit.collider.gameObject.GetComponent<Paper>().type == 2)
+                    paperType2.SetActive(true);
             }
         } //Paper
 
@@ -187,7 +192,8 @@ public class UseTools1 : MonoBehaviour
     {
         if(Input.GetButtonDown("E"))
         {
-            paperHud.SetActive(false);
+            paperType1.SetActive(false);
+            paperType2.SetActive(false);
 
             gc.states = States.Play;
             gc.cursor = false;

@@ -6237,7 +6237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressE: {fileID: 4387848838359277102}
-  paperHud: {fileID: 4387848837457904069}
+  paperType1: {fileID: 4387848837457904069}
+  paperType2: {fileID: 1260763131570215159}
   paperText: {fileID: 5393574934575164899}
   shovel: {fileID: 7984775409010067089}
   handShovel: {fileID: 3297427794826184096}
