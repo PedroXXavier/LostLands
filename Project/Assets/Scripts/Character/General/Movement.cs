@@ -139,11 +139,6 @@ public class Movement : MonoBehaviour
             case States.Pause:
                 break;
         }
-
-        if (animator.GetFloat("Speed") > 0.1)
-        {
-            phView.RPC("WalkSound", RpcTarget.AllBuffered);
-        }
     }
 
     private void MyInput()
@@ -289,11 +284,6 @@ public class Movement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
-    [PunRPC]
-    private void WalkSound()
-    {
-        WalkSFX.Play();
-    }
     [PunRPC]
     private void JumpSound()
     {

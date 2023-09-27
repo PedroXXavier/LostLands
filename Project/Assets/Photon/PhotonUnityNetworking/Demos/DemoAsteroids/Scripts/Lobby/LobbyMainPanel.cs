@@ -285,7 +285,7 @@ namespace Photon.Pun.Demo.Asteroids
             //if(PhotonNetwork.PlayerList.Length >= 2)
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
-            PhotonNetwork.LoadLevel("Tests");
+            PhotonNetwork.LoadLevel("mapa");
         }
 
         #endregion
