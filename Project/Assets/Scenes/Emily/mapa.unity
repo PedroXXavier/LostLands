@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180fdfec51aebdf49841092282f5cd90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitGameplay1: {fileID: 4387848838406595784, guid: 31b19efab089f37468a4f8580271d681, type: 3}
+  kitGameplay1: {fileID: 4387848838406595784, guid: 9a80a6a7731f5c64881780ddb911a68d, type: 3}
   kitGameplay2: {fileID: 4387848838406595784, guid: 9a80a6a7731f5c64881780ddb911a68d, type: 3}
   playerSpawner1: {fileID: 1618483353}
   playerSpawner2: {fileID: 1651624186}
@@ -9827,6 +9827,10 @@ PrefabInstance:
     - target: {fileID: 6756435262373897716, guid: 9c8eedc6b8d8b8e4bae96e829772506e, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756435262476261401, guid: 9c8eedc6b8d8b8e4bae96e829772506e, type: 3}
+      propertyPath: m_TagString
+      value: NoteTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 6756435262476261403, guid: 9c8eedc6b8d8b8e4bae96e829772506e, type: 3}
       propertyPath: m_Size.x
@@ -18412,6 +18416,10 @@ PrefabInstance:
     - target: {fileID: 8361174567125492230, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361174567262575411, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
+      propertyPath: m_TagString
+      value: NoteTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 8361174567293846026, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: sceneViewId

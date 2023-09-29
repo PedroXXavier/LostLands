@@ -181,6 +181,7 @@ public class UseTools2 : MonoBehaviour
                 break;
         }
     }
+
     void TakeTools()
     {
         if (Input.GetButtonDown("One")) //Shovel
@@ -193,6 +194,10 @@ public class UseTools2 : MonoBehaviour
             else
             {
                 phView.RPC("Enable_Shovel_RPC", RpcTarget.AllBuffered);
+
+                phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
+
                 tools = Tool2.Shovel;
             }
         }
@@ -207,6 +212,9 @@ public class UseTools2 : MonoBehaviour
             else
             {
                 phView.RPC("Enable_Compass_RPC", RpcTarget.AllBuffered);
+
+                phView.RPC("Disable_Shovel_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
                 tools = Tool2.Compass;
             }
         }
@@ -220,7 +228,10 @@ public class UseTools2 : MonoBehaviour
             }
             else
             {
-                phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Enable_Luneta_RPC", RpcTarget.AllBuffered);
+
+                phView.RPC("Disable_Shovel_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
                 tools = Tool2.Luneta;
             }
         }

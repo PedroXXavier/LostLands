@@ -7,12 +7,12 @@ using Photon.Realtime;
 public class Movement : MonoBehaviour
 {
     Animator animator;
+    PhotonView phView;
 
     [Header("ToolsAnimators")]
     public Animator pickaxe; public Animator shovel;
     public Animator compass; public Animator luneta;
 
-    public PhotonView phView;
 
     GameController gc;
 
@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
         animator = GetComponent<Animator>();
+        phView = GetComponent<PhotonView>();    
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
@@ -213,15 +214,7 @@ public class Movement : MonoBehaviour
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
 
-            animator.SetFloat("Speed", flatVel.sqrMagnitude);
-
-            pickaxe.SetFloat("Speed", flatVel.sqrMagnitude);
-            luneta.SetFloat("Speed", flatVel.sqrMagnitude);
-            shovel.SetFloat("Speed", flatVel.sqrMagnitude);
-            compass.SetFloat("Speed", flatVel.sqrMagnitude);
-
-
-            if (flatVel.magnitude < 0.1)
+/*            if (flatVel.magnitude < 0.1)
             {
                 //animacoes dos objetos
                 boredTimer += Time.deltaTime;
@@ -236,7 +229,7 @@ public class Movement : MonoBehaviour
                 //animacoes dos objetos
                 bored = false;
                 boredTimer = 0;
-            }
+            }*/
         }
     }
 
