@@ -16058,12 +16058,12 @@ MonoBehaviour:
   shovel: {fileID: 5507465105773157167}
   compass: {fileID: 3889286347848607164}
   luneta: {fileID: 435112050413525335}
-  phView: {fileID: 0}
-  moveSpeed: 0
+  moveSpeed: 6
   groundDrag: 5
   jumpForce: 6
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  readyToJump: 0
   WalkSFX: {fileID: 0}
   JumpSFX: {fileID: 0}
   crouchSpeed: 3.5

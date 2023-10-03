@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     public Animator pickaxe; public Animator shovel;
     public Animator compass; public Animator luneta;
 
+    [SerializeField] bool onSloop;
+
 
     GameController gc;
 
@@ -28,7 +30,7 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump;
+    [SerializeField] bool readyToJump;
 
     bool bored;
     float boredTimer;
@@ -48,7 +50,7 @@ public class Movement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded;
 
     public Transform orientation;
 
@@ -147,6 +149,23 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
+        if (horizontalInput < 0.1 && verticalInput < 0.1)
+        {
+            //animacoes dos objetos
+            boredTimer += Time.deltaTime;
+
+            if (boredTimer >= 6)
+            {
+                bored = true;
+            }
+        }
+        else if (horizontalInput > 0.1 && verticalInput > 0.1)
+        {
+            //animacoes dos objetos
+            bored = false;
+            boredTimer = 0;
+        }
+
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
@@ -213,23 +232,6 @@ public class Movement : MonoBehaviour
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
-
-/*            if (flatVel.magnitude < 0.1)
-            {
-                //animacoes dos objetos
-                boredTimer += Time.deltaTime;
-
-                if (boredTimer >= 6)
-                {
-                    bored = true;
-                }
-            }
-            else if (flatVel.magnitude > 0)
-            {
-                //animacoes dos objetos
-                bored = false;
-                boredTimer = 0;
-            }*/
         }
     }
 

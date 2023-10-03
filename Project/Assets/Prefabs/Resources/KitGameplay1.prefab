@@ -5940,7 +5940,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -16088,24 +16088,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d50c13694100f644be1b733e43ad137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  sprintSpeed: 9
+  pickaxe: {fileID: 0}
+  shovel: {fileID: 0}
+  compass: {fileID: 0}
+  luneta: {fileID: 0}
+  onSloop: 0
+  moveSpeed: 6
   groundDrag: 5
   jumpForce: 6
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  readyToJump: 0
+  WalkSFX: {fileID: 8481997949881084216}
+  JumpSFX: {fileID: 355994572452612843}
   crouchSpeed: 3.5
   crouchYScale: 0.5
   jumpKey: 32
-  sprintKey: 304
   crouchKey: 306
   playerHeight: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  maxSlopeAngle: 40
+  grounded: 0
   orientation: {fileID: 3021317102225662672}
-  state: 0
+  maxSlopeAngle: 40
+  hud: {fileID: 4387848838482332441}
 --- !u!114 &8135203184343126596
 MonoBehaviour:
   m_ObjectHideFlags: 0

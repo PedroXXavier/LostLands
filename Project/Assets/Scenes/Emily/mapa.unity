@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180fdfec51aebdf49841092282f5cd90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitGameplay1: {fileID: 4387848838406595784, guid: 9a80a6a7731f5c64881780ddb911a68d, type: 3}
+  kitGameplay1: {fileID: 4387848838406595784, guid: 31b19efab089f37468a4f8580271d681, type: 3}
   kitGameplay2: {fileID: 4387848838406595784, guid: 9a80a6a7731f5c64881780ddb911a68d, type: 3}
   playerSpawner1: {fileID: 1618483353}
   playerSpawner2: {fileID: 1651624186}

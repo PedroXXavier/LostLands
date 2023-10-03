@@ -22,4 +22,9 @@ public class OnlineController : MonoBehaviourPunCallbacks
         else
             PhotonNetwork.Instantiate(kitGameplay2.name, playerSpawner2.position, kitGameplay2.transform.rotation, 0);
     }
+
+    private void Update()
+    {
+
+    }
 }
