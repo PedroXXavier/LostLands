@@ -2699,9 +2699,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7000823672697447433}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: CursorOff
+      - m_Target: {fileID: 2950559161101681891}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: StatesPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10182,9 +10182,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7000823672697447433}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: CursorOff
+      - m_Target: {fileID: 2950559161101681891}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: StatesPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
