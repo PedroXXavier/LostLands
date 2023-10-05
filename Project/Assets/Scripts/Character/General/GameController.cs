@@ -22,11 +22,11 @@ public class GameController : MonoBehaviour
 
     [Header("Pause")]
     public GameObject pauseBg;
-    bool pauseOn;
+    public bool pauseOn;
 
     [Header("Notebook")]
     public GameObject notebook;
-    bool noteOn;
+    public bool noteOn;
 
     public bool cursor;
 

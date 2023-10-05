@@ -16,6 +16,12 @@ public class ButtonController : MonoBehaviour
         gc = FindObjectOfType(typeof(GameController)) as GameController; 
         phView = GetComponent<PhotonView>(); }
 
+    public void NoteOff() {
+        gc.noteOn = false; }
+
+    public void PauseOff() {
+        gc.pauseOn= false; }
+
     public void StatesPlay() {
         gc.states = States.Play; }
 

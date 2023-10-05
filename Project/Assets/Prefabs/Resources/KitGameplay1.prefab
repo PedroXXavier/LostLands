@@ -2711,6 +2711,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2950559161101681891}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: PauseOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2767717062145748705
 GameObject:
   m_ObjectHideFlags: 0
@@ -6004,6 +6016,7 @@ MonoBehaviour:
   pickaxe: {fileID: 1592558301619358377}
   handPickaxe: {fileID: 5897824344124529843}
   pickaxeAnim: {fileID: 1962954090728232166}
+  particle: {fileID: 4363266185272330567, guid: 996e224171e980b43a326bc09172deff, type: 3}
   hitPickaxeSFX: {fileID: 609108792260958195}
   hitNothingSFX: {fileID: 2908365083162963069}
   map: {fileID: 7156743409181145829}
@@ -6460,7 +6473,9 @@ MonoBehaviour:
   openBookSFX: {fileID: 8436067779731153226}
   states: 0
   pauseBg: {fileID: 927480496840703246}
+  pauseOn: 0
   notebook: {fileID: 318976153035731865}
+  noteOn: 0
   cursor: 0
 --- !u!82 &8436067779731153226
 AudioSource:
@@ -10185,6 +10200,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2950559161101681891}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: StatesPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2950559161101681891}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: NoteOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

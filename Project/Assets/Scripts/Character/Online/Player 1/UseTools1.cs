@@ -27,6 +27,8 @@ public class UseTools1 : MonoBehaviour
     public GameObject pickaxe; public GameObject handPickaxe;
     public Animator pickaxeAnim;
 
+    public GameObject particle;
+
     public AudioSource hitPickaxeSFX;
     public AudioSource hitNothingSFX;
 
@@ -140,6 +142,11 @@ public class UseTools1 : MonoBehaviour
                 {
                     hit.collider.SendMessage("Pickaxe");
                     hitPickaxeSFX.Play();
+
+                    if (hit.collider.gameObject.GetComponent<Rock>().life >= 0)
+                    {
+                        GameObject temPrefab = Instantiate(particle, hit.collider.gameObject.transform.position, particle.transform.rotation);
+                    }
                 }
                 break;
 
