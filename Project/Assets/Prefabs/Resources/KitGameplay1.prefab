@@ -6016,7 +6016,6 @@ MonoBehaviour:
   pickaxe: {fileID: 1592558301619358377}
   handPickaxe: {fileID: 5897824344124529843}
   pickaxeAnim: {fileID: 1962954090728232166}
-  particle: {fileID: 4363266185272330567, guid: 996e224171e980b43a326bc09172deff, type: 3}
   hitPickaxeSFX: {fileID: 609108792260958195}
   hitNothingSFX: {fileID: 2908365083162963069}
   map: {fileID: 7156743409181145829}
@@ -16115,10 +16114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d50c13694100f644be1b733e43ad137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickaxe: {fileID: 0}
-  shovel: {fileID: 0}
-  compass: {fileID: 0}
-  luneta: {fileID: 0}
+  pickaxe: {fileID: 1962954090728232166}
+  shovel: {fileID: 5585117204237208136}
+  compass: {fileID: 7441029037713343983}
+  luneta: {fileID: 1408501594184757647}
   onSloop: 0
   moveSpeed: 6
   groundDrag: 5

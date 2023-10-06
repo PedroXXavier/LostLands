@@ -87,6 +87,9 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        print(horizontalInput);
+
+
         if (!phView.IsMine)
             return;
 
@@ -148,6 +151,13 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+/*        animator.SetFloat("Speed", rb.velocity.x);
+
+        pickaxe.SetFloat("Speed", rb.velocity.x);
+        shovel.SetFloat("Speed", rb.velocity.x);
+        compass.SetFloat("Speed", rb.velocity.x);
+        luneta.SetFloat("Speed", rb.velocity.x);*/
 
         if (horizontalInput < 0.1 && verticalInput < 0.1)
         {

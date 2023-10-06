@@ -27,8 +27,6 @@ public class UseTools1 : MonoBehaviour
     public GameObject pickaxe; public GameObject handPickaxe;
     public Animator pickaxeAnim;
 
-    public GameObject particle;
-
     public AudioSource hitPickaxeSFX;
     public AudioSource hitNothingSFX;
 
@@ -61,7 +59,7 @@ public class UseTools1 : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("HandInteract"))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("HandInteract")) 
         {
             pressE.SetActive(true);
 
@@ -140,13 +138,8 @@ public class UseTools1 : MonoBehaviour
                 }
                 if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract"))
                 {
-                    hit.collider.SendMessage("Pickaxe");
+                    hit.collider.GetComponent<Rock>().Pickaxe();
                     hitPickaxeSFX.Play();
-
-                    if (hit.collider.gameObject.GetComponent<Rock>().life >= 0)
-                    {
-                        GameObject temPrefab = Instantiate(particle, hit.collider.gameObject.transform.position, particle.transform.rotation);
-                    }
                 }
                 break;
 
