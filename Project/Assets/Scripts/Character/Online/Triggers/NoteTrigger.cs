@@ -71,7 +71,6 @@ public class NoteTrigger : MonoBehaviour
                 notificationSound.Play();
                 other.gameObject.GetComponent<NoteId>().actived = true;
             }
-
         }
     }
 }

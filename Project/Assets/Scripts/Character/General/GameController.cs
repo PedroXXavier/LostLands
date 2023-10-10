@@ -9,7 +9,7 @@ public enum States {
 
 public class GameController : MonoBehaviour
 {
-    public PhotonView phView;
+    PhotonView phView;
 
     NoteTrigger noteTrigger;
 
@@ -33,6 +33,8 @@ public class GameController : MonoBehaviour
     private void Start() {
         noteTrigger = FindObjectOfType(typeof(NoteTrigger)) as NoteTrigger;
         fragmentControl = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
+
+        phView = GetComponent<PhotonView>();
 
         if (!phView.IsMine)
             gameObject.SetActive(false);

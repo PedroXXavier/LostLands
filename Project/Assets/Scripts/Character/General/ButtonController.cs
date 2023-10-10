@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class ButtonController : MonoBehaviour
+public class ButtonController : MonoBehaviourPunCallbacks
 {
     public GameObject player;
 
@@ -27,6 +27,16 @@ public class ButtonController : MonoBehaviour
 
     public void StatesPause() {
         gc.states = States.Pause; }
+
+    public void OpenNoteButton()
+    {
+        gc.noteOn = true;
+    }
+    public void OpenPauseButton()
+    {
+        gc.pauseOn = true;
+    }
+
 
     //esse é pra qunado estiver dentro da cena do jogo
 

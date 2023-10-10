@@ -28,13 +28,13 @@ public class Rock : MonoBehaviour
     [PunRPC]
     private void PickaxeRPC()
     {
-        life--;
-
-        if (life <= 0)
+        if (life <= 1)
         {
             destroyRockSFX.Play();
             Destroy(gameObject);
         }
+
+        life--;
 
         particle.transform.position = gameObject.transform.position;
         particle.SetActive(true);

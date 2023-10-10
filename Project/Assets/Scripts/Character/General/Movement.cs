@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class Movement : MonoBehaviour
 {
-    Animator animator;
+    Animator anim;
     PhotonView phView;
 
     [Header("ToolsAnimators")]
@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
     public Animator compass; public Animator luneta;
 
     [SerializeField] bool onSloop;
-
 
     GameController gc;
 
@@ -71,7 +70,7 @@ public class Movement : MonoBehaviour
     {
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         phView = GetComponent<PhotonView>();    
 
         rb = GetComponent<Rigidbody>();
@@ -87,9 +86,6 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        print(horizontalInput);
-
-
         if (!phView.IsMine)
             return;
 
@@ -99,6 +95,33 @@ public class Movement : MonoBehaviour
         {
             case States.Play:
                 SpeedControl(); MyInput(); Breathing(); StateHandler();
+
+                if (horizontalInput != 0 || verticalInput != 0)
+                {
+                    anim.SetBool("Walking", true);
+                    pickaxe.SetBool("Walking", true);
+                    luneta.SetBool("Walking", true);
+                    compass.SetBool("Walking", true);
+                    shovel.SetBool("Walking", true);
+
+                    bored = false;
+                    boredTimer = 0;
+                }
+                else
+                {
+                    anim.SetBool("Walking", false);
+                    pickaxe.SetBool("Walking", false);
+                    luneta.SetBool("Walking", false);
+                    compass.SetBool("Walking", false);
+                    shovel.SetBool("Walking", false);
+
+                    boredTimer += Time.deltaTime;
+
+                    if (boredTimer >= 6)
+                    {
+                        bored = true;
+                    }
+                }
 
                 // handle drag
                 if (grounded)
@@ -125,7 +148,7 @@ public class Movement : MonoBehaviour
         else if (grounded)
         {
             state = MovementState.walking;
-            moveSpeed = 6;
+            moveSpeed = 7;
         }
 
         // Mode - Air
@@ -151,30 +174,6 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-/*        animator.SetFloat("Speed", rb.velocity.x);
-
-        pickaxe.SetFloat("Speed", rb.velocity.x);
-        shovel.SetFloat("Speed", rb.velocity.x);
-        compass.SetFloat("Speed", rb.velocity.x);
-        luneta.SetFloat("Speed", rb.velocity.x);*/
-
-        if (horizontalInput < 0.1 && verticalInput < 0.1)
-        {
-            //animacoes dos objetos
-            boredTimer += Time.deltaTime;
-
-            if (boredTimer >= 6)
-            {
-                bored = true;
-            }
-        }
-        else if (horizontalInput > 0.1 && verticalInput > 0.1)
-        {
-            //animacoes dos objetos
-            bored = false;
-            boredTimer = 0;
-        }
 
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
@@ -249,10 +248,10 @@ public class Movement : MonoBehaviour
     {
         if (bored)
         {
-            animator.SetBool("Bored", true);
+            anim.SetBool("Bored", true);
         }
         else
-            animator.SetBool("Bored", false);
+            anim.SetBool("Bored", false);
     }
 
     private void Jump()
@@ -263,7 +262,10 @@ public class Movement : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
-        animator.SetTrigger("Jump");
+        bored = false;
+        boredTimer = 0;
+
+        anim.SetTrigger("Jump");
         phView.RPC("JumpSound", RpcTarget.AllBuffered);
     }
 

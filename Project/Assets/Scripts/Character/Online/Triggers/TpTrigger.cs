@@ -14,6 +14,7 @@ public class TpTrigger : MonoBehaviour
             {
                 GameObject player = collision.gameObject;
                 player.transform.position = tpIn.position;
+                player.transform.rotation = tpIn.rotation;
             }
 
 
@@ -22,6 +23,7 @@ public class TpTrigger : MonoBehaviour
             {
                 GameObject player = collision.gameObject;
                 player.transform.position = tpOut.position;
+                player.transform.rotation = tpIn.rotation;
             }
     }
 }

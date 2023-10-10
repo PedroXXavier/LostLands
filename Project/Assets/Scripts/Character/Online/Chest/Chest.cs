@@ -10,6 +10,8 @@ public class Chest : MonoBehaviour
     PhotonView phView;
     Animator anim;
 
+    public GameObject digParticle, openParticle;
+
     public AudioSource openChestSFX, grabFragment;
 
     public bool fragmentActived;
@@ -40,7 +42,8 @@ public class Chest : MonoBehaviour
     {
         life--;
 
-        //botar partícula
+        digParticle.transform.position = gameObject.transform.position;
+        digParticle.SetActive(true);
 
         if (life == 2)
         {
@@ -64,5 +67,8 @@ public class Chest : MonoBehaviour
 
         openChestSFX.Play();
         grabFragment.Play();
+
+        openParticle.transform.position = gameObject.transform.position;
+        openParticle.SetActive(true);
     }
 }

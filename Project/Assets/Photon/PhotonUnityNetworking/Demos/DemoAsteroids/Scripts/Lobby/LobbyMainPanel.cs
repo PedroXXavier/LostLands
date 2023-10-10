@@ -280,12 +280,31 @@ namespace Photon.Pun.Demo.Asteroids
             SetActivePanel(RoomListPanel.name);
         }
 
+        [SerializeField] float timer, maxTimer = 2;
+        [SerializeField] bool activeTimer;
+
+        private void Update()
+        {
+            if(activeTimer)
+            {
+                timer += Time.deltaTime;
+            }
+
+            if(timer >= maxTimer) 
+            {
+                activeTimer= false;
+                timer = 0;
+
+                //if(PhotonNetwork.PlayerList.Length >= 2)
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.LoadLevel("mapa");
+            }
+        }
+
         public void OnStartGameButtonClicked()
         {
-            //if(PhotonNetwork.PlayerList.Length >= 2)
-            PhotonNetwork.CurrentRoom.IsOpen = false;
-            PhotonNetwork.CurrentRoom.IsVisible = false;
-            PhotonNetwork.LoadLevel("mapa");
+            activeTimer = true;
         }
 
         #endregion
