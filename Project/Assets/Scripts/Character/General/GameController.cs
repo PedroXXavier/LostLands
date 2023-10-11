@@ -5,7 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 
 public enum States {
-    Play, Pause, Win }
+    Play, Pause, Book, Win }
 
 public class GameController : MonoBehaviour
 {
@@ -42,7 +42,22 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        Pause(); Notebook(); ActicedWin();
+        switch (states)
+        { 
+            case States.Play:
+                Pause(); Notebook();
+                break;
+            case States.Pause:
+                Pause();
+                break;
+            case States.Book:
+                Notebook();
+                break;
+            case States.Win:
+                break;
+        }
+
+        ActicedWin();
 
         if (cursor) {
             Cursor.visible = true;
@@ -51,10 +66,14 @@ public class GameController : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked; }
 
-        if (!cursor && Input.GetButtonDown("Left Alt"))
+        if (!cursor && Input.GetButtonDown("Left Alt") && states == States.Play)
+        {
             cursor = true;
-        else if (cursor && Input.GetButtonDown("Left Alt"))
+        }
+        else if (cursor && Input.GetButtonDown("Left Alt") && states == States.Play)
+        {
             cursor = false;
+        }
 
         if(fragmentControl.allFrag)
         {
@@ -68,7 +87,7 @@ public class GameController : MonoBehaviour
         if (fragmentControl.allFrag)
         {
             cursor = true;
-            states = States.Pause;
+            states = States.Win;
 
             win.SetActive(true);
         }
@@ -100,7 +119,7 @@ public class GameController : MonoBehaviour
         {
             openBookSFX.Play();
 
-            states = States.Pause;
+            states = States.Book;
             notebook.SetActive(true);
             noteOn = true;
 

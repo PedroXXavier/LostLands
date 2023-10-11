@@ -12,7 +12,7 @@ public class mCam : MonoBehaviour
     [Header("Camera")]
     public Transform charBody, charHead;
 
-    float maxY = 90, minY = -45;
+    float maxY = 90, minY = -75;
     float rotationX = 0, rotationY = 0;
 
     public float senseX = 1.2f, senseY = 1.2f;

@@ -22,11 +22,18 @@ public class ButtonController : MonoBehaviourPunCallbacks
     public void PauseOff() {
         gc.pauseOn= false; }
 
+
+
     public void StatesPlay() {
         gc.states = States.Play; }
 
     public void StatesPause() {
         gc.states = States.Pause; }
+
+    public void StatesBook()
+    {
+        gc.states = States.Pause;
+    }
 
     public void OpenNoteButton()
     {

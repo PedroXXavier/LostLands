@@ -280,12 +280,24 @@ namespace Photon.Pun.Demo.Asteroids
             SetActivePanel(RoomListPanel.name);
         }
 
-        [SerializeField] float timer, maxTimer = 2;
-        [SerializeField] bool activeTimer;
+        float timer, maxTimer = 2;
+        bool activeTimer;
+
+        public GameObject notenoughplayerText, fade;
+
+        PhotonView phView;
+
+        private void Start()
+        {
+            phView = GetComponent<PhotonView>();
+        }
 
         private void Update()
         {
-            if(activeTimer)
+            if (PhotonNetwork.PlayerList.Length == 2)
+                notenoughplayerText.SetActive(false);
+
+            if (activeTimer)
             {
                 timer += Time.deltaTime;
             }
@@ -295,7 +307,6 @@ namespace Photon.Pun.Demo.Asteroids
                 activeTimer= false;
                 timer = 0;
 
-                //if(PhotonNetwork.PlayerList.Length >= 2)
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel("mapa");
@@ -305,6 +316,23 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnStartGameButtonClicked()
         {
             activeTimer = true;
+            phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+
+            /*            if(PhotonNetwork.PlayerList.Length == 2)
+                        {
+                            activeTimer = true;
+                            phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+                        }
+                        else
+                            notenoughplayerText.SetActive(true);*/
+
+
+        }
+
+        [PunRPC]
+        private void FadeRPC()
+        {
+            fade.SetActive(true);
         }
 
         #endregion

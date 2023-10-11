@@ -1920,7 +1920,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2950559161101681891}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StatesPause
+        m_MethodName: StatesBook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13452,7 +13452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnPageSFX: {fileID: 8793601053889201394}
-  pageSpeed: 0.3
+  pageSpeed: 1.2
   pages:
   - {fileID: 8494454582824704101}
   - {fileID: 4344911073253626141}
@@ -16281,17 +16281,17 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
-  - Type: 1
-    SynchronizeType: 2
-    Name: Speed
   - Type: 4
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: Bored
   - Type: 9
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: Jump
+  - Type: 4
+    SynchronizeType: 2
+    Name: Walking
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 2
     LayerIndex: 0
 --- !u!114 &2863154571929860414
 MonoBehaviour:
