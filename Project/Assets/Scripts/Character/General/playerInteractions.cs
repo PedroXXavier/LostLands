@@ -18,6 +18,10 @@ public class playerInteractions : MonoBehaviour
         gc = FindObjectOfType(typeof(GameController)) as GameController;
 
         nickNameTxt = GetComponentInChildren<CanvasName>();
+        phView = GetComponent<PhotonView>();
+
+        if(!phView.IsMine)
+            gameObject.SetActive(false);
 
         //phView.RPC("RPC_SetNickText", RpcTarget.All, PlayerPrefs.GetString("Nick"));
     }

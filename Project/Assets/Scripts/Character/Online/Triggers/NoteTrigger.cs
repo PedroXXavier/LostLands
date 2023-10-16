@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class NoteTrigger : MonoBehaviour
 {
     public AudioSource notificationSound;
+    PhotonView view;
 
     public GameObject[] content;
     [SerializeField] bool[] activedContent;
@@ -15,6 +17,11 @@ public class NoteTrigger : MonoBehaviour
     private void Start()
     {
         activedContent= new bool[content.Length];
+
+        view= GetComponent<PhotonView>();
+
+        if(!view.IsMine)
+            gameObject.SetActive(false);
     }
 
     private void Update()

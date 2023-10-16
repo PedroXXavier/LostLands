@@ -315,18 +315,16 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void OnStartGameButtonClicked()
         {
-            activeTimer = true;
-            phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+/*            activeTimer = true;
+            phView.RPC("FadeRPC", RpcTarget.AllBuffered);*/
 
-            /*            if(PhotonNetwork.PlayerList.Length == 2)
-                        {
-                            activeTimer = true;
-                            phView.RPC("FadeRPC", RpcTarget.AllBuffered);
-                        }
-                        else
-                            notenoughplayerText.SetActive(true);*/
-
-
+            if (PhotonNetwork.PlayerList.Length == 2)
+            {
+                activeTimer = true;
+                phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+            }
+            else
+                notenoughplayerText.SetActive(true);
         }
 
         [PunRPC]
