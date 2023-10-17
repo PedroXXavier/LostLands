@@ -17,6 +17,10 @@ public class UseTools2 : MonoBehaviour
 
     Tool2 tools;
 
+    [Header("Amuleto")]
+    public GameObject amu1; public GameObject amu2; public GameObject amu3;
+    public GameObject silhueta;
+
     [Header("Hand")]
     public GameObject pressE;
 
@@ -59,6 +63,19 @@ public class UseTools2 : MonoBehaviour
             case States.Pause:
                 ClosePaper();
                 break; }
+
+        if (fragments.fragmentsCollected[0])
+        {
+            amu1.SetActive(true);
+        }
+        if (fragments.fragmentsCollected[1])
+        {
+            amu2.SetActive(true);
+        }
+        if (fragments.fragmentsCollected[2])
+        {
+            amu3.SetActive(true);
+        }
     }
 
     void UseTools()
@@ -94,6 +111,8 @@ public class UseTools2 : MonoBehaviour
                 if (Input.GetButtonDown("E"))
                 {
                     hit.collider.SendMessage("OpenChest");
+
+                    StartCoroutine("Amuleto");
 
                     hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
                     fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
@@ -282,5 +301,12 @@ public class UseTools2 : MonoBehaviour
             gc.states = States.Play;
             gc.cursor = false;
         }
+    }
+
+    IEnumerator Amuleto()
+    {
+        silhueta.SetActive(true);
+        yield return new WaitForSeconds(5);
+        silhueta.SetActive(false);
     }
 }

@@ -42830,11 +42830,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8361174567752325032, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: correctSequence.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361174567752325032, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
+      propertyPath: correctSequence.Array.data[2]
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8361174567752325032, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: correctSequence.Array.data[3]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8361174567752325035, guid: 72cc6efc2f08d644883fde2170d20fc1, type: 3}
       propertyPath: sceneViewId

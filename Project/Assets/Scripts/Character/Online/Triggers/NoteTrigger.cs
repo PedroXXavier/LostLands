@@ -20,8 +20,8 @@ public class NoteTrigger : MonoBehaviour
 
         view= GetComponent<PhotonView>();
 
-        if(!view.IsMine)
-            gameObject.SetActive(false);
+        if(!view.IsMine) 
+            gameObject.GetComponent<NoteTrigger>().enabled = false;
     }
 
     private void Update()
@@ -70,9 +70,10 @@ public class NoteTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("NoteTrigger"))
         {
+            activedContent[other.gameObject.GetComponent<NoteId>().id] = true;
+
             if (!other.gameObject.GetComponent<NoteId>().actived)
             {
-                activedContent[other.gameObject.GetComponent<NoteId>().id] = true;
                 notificationOn = true;
 
                 notificationSound.Play();

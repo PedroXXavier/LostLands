@@ -81,10 +81,7 @@ public class Movement : MonoBehaviour
         startYScale = transform.localScale.y;
 
         if(!phView.IsMine)
-        {
             hud.gameObject.SetActive(false);
-            gameObject.SetActive(false);
-        }
     }
 
     private void Update()
