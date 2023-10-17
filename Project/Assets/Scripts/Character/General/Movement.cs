@@ -94,7 +94,7 @@ public class Movement : MonoBehaviour
         switch (gc.states)
         {
             case States.Play:
-                SpeedControl(); MyInput(); Breathing(); StateHandler();
+                SpeedControl(); MyInput(); Breathing(); StateHandler(); Dedos();
 
                 if (horizontalInput != 0 || verticalInput != 0)
                 {
@@ -295,5 +295,11 @@ public class Movement : MonoBehaviour
     private void JumpSound()
     {
         JumpSFX.Play();
+    }
+
+    private void Dedos()
+    {
+        if (Input.GetButtonDown("K"))
+            anim.SetTrigger("DedoMeio");
     }
 }
