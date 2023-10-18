@@ -98,6 +98,9 @@ public class Movement : MonoBehaviour
 
                 if (horizontalInput != 0 || verticalInput != 0)
                 {
+                    anim.SetBool("DedoMeio", false);
+                    anim.SetBool("Joinha", false);
+
                     anim.SetBool("Walking", true);
                     pickaxe.SetBool("Walking", true);
                     luneta.SetBool("Walking", true);
@@ -115,11 +118,14 @@ public class Movement : MonoBehaviour
                     compass.SetBool("Walking", false);
                     shovel.SetBool("Walking", false);
 
-                    boredTimer += Time.deltaTime;
-
-                    if (boredTimer >= 6)
+                    if (!anim.GetBool("Joinha"))
                     {
-                        bored = true;
+                        boredTimer += Time.deltaTime;
+
+                        if (boredTimer >= 6)
+                        {
+                            bored = true;
+                        }
                     }
                 }
 
@@ -265,6 +271,9 @@ public class Movement : MonoBehaviour
         bored = false;
         boredTimer = 0;
 
+        anim.SetBool("Joinha", false);
+        anim.SetBool("DedoMeio", false);
+
         anim.SetTrigger("Jump");
         phView.RPC("JumpSound", RpcTarget.AllBuffered);
     }
@@ -300,6 +309,25 @@ public class Movement : MonoBehaviour
     private void Dedos()
     {
         if (Input.GetButtonDown("K"))
-            anim.SetTrigger("DedoMeio");
+        {
+            if(!anim.GetBool("DedoMeio"))
+            {
+                anim.SetBool("DedoMeio", true);
+                anim.SetBool("Joinha", false);
+            }
+            else
+                anim.SetBool("DedoMeio", false);
+        }
+
+        else if (Input.GetButtonDown("J"))
+        {
+            if (!anim.GetBool("Joinha"))
+            {
+                anim.SetBool("Joinha", true);
+                anim.SetBool("DedoMeio", false);
+            }
+            else
+                anim.SetBool("Joinha", false);
+        }
     }
 }

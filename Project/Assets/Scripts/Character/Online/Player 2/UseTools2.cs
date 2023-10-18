@@ -55,6 +55,13 @@ public class UseTools2 : MonoBehaviour
 
     void Update()
     {
+        if (phView.IsMine)
+        {
+            handCompass.SetActive(false);
+            handLuneta.SetActive(false);
+            handShovel.SetActive(false);
+        }
+
         switch (gc.states) {
             case States.Play:
                 TakeTools();
