@@ -12934,7 +12934,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A sequencia que abre o selo gravda nas pedras profeticas
+  m_text: 'A sequencia que abre o selo gravada nas pedras profeticas. Suba no X presente
+    no local e siga as seguinte sequencia:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0348efb715798a4fb17d8ceb7903909, type: 2}
   m_sharedMaterial: {fileID: -6064348318151728563, guid: c0348efb715798a4fb17d8ceb7903909, type: 2}
