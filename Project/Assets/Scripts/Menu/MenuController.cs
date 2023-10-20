@@ -7,25 +7,22 @@ using Unity.VisualScripting;
 public class MenuController : MonoBehaviour
 {
     public GameObject inicialFade, historiaFade;
-    float timer, maxTimer = 2; bool timerb;
-
+    [SerializeField] bool menu;
     public Animator creditAnimator;
+
+    public GameObject skipText;
+    bool canSkip;
 
     private void Update()
     {
-        if(Input.GetButtonDown("SkipFade"))
+        if(Input.GetButtonDown("SkipFade") && menu)
             inicialFade.SetActive(false);
 
-        if(timerb)
-        {
-            timer += Time.deltaTime;
+        else if(Input.GetButtonDown("SkipFade") && !menu && !canSkip)
+            StartCoroutine("ActiveSkip");
 
-            if(timer >= maxTimer) 
-            {
-                SceneManager.LoadScene("cutcine");
-                timerb = false;
-            }
-        }
+        else if (Input.GetButtonDown("SkipFade") && !menu && canSkip)
+            StartCoroutine("FadeToMenu");
     }
 
     public void Page1()
@@ -40,9 +37,30 @@ public class MenuController : MonoBehaviour
 
     public void SinglePlayer()
     {
-        historiaFade.SetActive(true);
-        timerb = true;
+        StartCoroutine("FadeToPlay");
     }
+
+    IEnumerator FadeToPlay()
+    {
+        historiaFade.SetActive(true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("cutcine");
+    }
+
+    IEnumerator ActiveSkip()
+    {
+        skipText.SetActive(true); canSkip= true;
+        yield return new WaitForSeconds(5);
+        skipText.SetActive(false); canSkip= false;
+    }
+
+    IEnumerator FadeToMenu()
+    {
+        historiaFade.SetActive(true);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Quit()
     {
         Application.Quit();

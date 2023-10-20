@@ -9605,7 +9605,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inicialFade: {fileID: 350153339}
   historiaFade: {fileID: 1861975694}
+  menu: 1
   creditAnimator: {fileID: 406299106}
+  skipText: {fileID: 0}
 --- !u!1001 &953341754
 PrefabInstance:
   m_ObjectHideFlags: 0
