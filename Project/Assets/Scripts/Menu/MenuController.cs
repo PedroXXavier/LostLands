@@ -6,14 +6,26 @@ using Unity.VisualScripting;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject fade;
+    public GameObject inicialFade, historiaFade;
+    float timer, maxTimer = 2; bool timerb;
 
     public Animator creditAnimator;
 
     private void Update()
     {
         if(Input.GetButtonDown("SkipFade"))
-            fade.SetActive(false);
+            inicialFade.SetActive(false);
+
+        if(timerb)
+        {
+            timer += Time.deltaTime;
+
+            if(timer >= maxTimer) 
+            {
+                SceneManager.LoadScene("cutcine");
+                timerb = false;
+            }
+        }
     }
 
     public void Page1()
@@ -28,7 +40,8 @@ public class MenuController : MonoBehaviour
 
     public void SinglePlayer()
     {
-        SceneManager.LoadScene("ilha pequena");
+        historiaFade.SetActive(true);
+        timerb = true;
     }
     public void Quit()
     {
