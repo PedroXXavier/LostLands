@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
     IEnumerator FadeToMenu()
     {
         historiaFade.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MainMenu");
     }
 

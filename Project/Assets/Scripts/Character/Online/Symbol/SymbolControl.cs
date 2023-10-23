@@ -11,6 +11,8 @@ public class SymbolControl : MonoBehaviour
     PhotonView phView;
 
     public int[] sequenceNumber, correctSequence;
+    List<int> randomCorrectSquence;
+
     public GameObject[] symbols;
     public GameObject[] spotters;
     public GameObject door;
@@ -22,22 +24,11 @@ public class SymbolControl : MonoBehaviour
         phView= GetComponent<PhotonView>();
     }
 
-    private void Update()
-    {
-        if (activeTimer) {
-            timer += Time.deltaTime;
-        }
-
-        if (timer >= maxTimer)
-        {
-            activeTimer = false; timer = 0;
-            phView.RPC("WhiteBack_RPC", RpcTarget.AllBuffered);
-        }
-    }
-
     [PunRPC]
     private void WhiteBack_RPC()
     {
+        activeTimer = false;
+
         symbols[0].gameObject.GetComponent<Symbol>().isSelected = false;
         symbols[1].gameObject.GetComponent<Symbol>().isSelected = false;
         symbols[2].gameObject.GetComponent<Symbol>().isSelected = false;
@@ -134,7 +125,14 @@ public class SymbolControl : MonoBehaviour
             spotters[2].GetComponent<Renderer>().material.color = Color.red;
             spotters[3].GetComponent<Renderer>().material.color = Color.red;
 
+            StartCoroutine("Redone");
             activeTimer = true;
         }
+    }
+
+    IEnumerator Redone()
+    {
+        yield return new WaitForSeconds(2);
+        phView.RPC("WhiteBack_RPC", RpcTarget.AllBuffered);
     }
 }
