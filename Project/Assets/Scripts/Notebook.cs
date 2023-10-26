@@ -14,9 +14,13 @@ public class Notebook : MonoBehaviour
     [SerializeField] GameObject nextButton;
     [SerializeField] GameObject previousButton;
 
+    GameController gc;
+
     private void Start()
     {
         InitialState();
+
+        gc = FindObjectOfType(typeof(GameController)) as GameController;
     }
     public void InitialState()
     {
@@ -36,6 +40,8 @@ public class Notebook : MonoBehaviour
         NextButtonActions();
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
+
+        StartCoroutine("CantMove");
 
         turnPageSFX.Play();
     }
@@ -59,6 +65,8 @@ public class Notebook : MonoBehaviour
         PreviousButtonActions();
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, false));
+
+        StartCoroutine("CantMove");
 
         turnPageSFX.Play();
     }
@@ -97,5 +105,12 @@ public class Notebook : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    IEnumerator CantMove()
+    {
+        gc.states = States.Pause;
+        yield return new WaitForSeconds(0.5f);
+        gc.states = States.Book;
     }
 }

@@ -17,7 +17,6 @@ public class SymbolControl : MonoBehaviour
     public GameObject[] spotters;
     public GameObject door;
 
-    float maxTimer = 2f, timer;
     bool activeTimer;
 
     private void Start() {

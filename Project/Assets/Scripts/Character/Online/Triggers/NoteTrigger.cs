@@ -9,7 +9,7 @@ public class NoteTrigger : MonoBehaviour
     PhotonView view;
 
     public GameObject[] content;
-    [SerializeField] bool[] activedContent;
+    public bool[] activedContent;
 
     public GameObject notification;
     public bool notificationOn;
@@ -63,7 +63,6 @@ public class NoteTrigger : MonoBehaviour
 
         if (activedContent[10]) //10
             content[10].SetActive(true);
-
     }
 
     private void OnTriggerEnter(Collider other)

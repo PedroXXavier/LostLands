@@ -12,7 +12,7 @@ public enum Tool2
 
 public class UseTools2 : MonoBehaviour
 {
-    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments;
+    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt;
     PhotonView phView;
 
     Tool2 tools;
@@ -49,6 +49,7 @@ public class UseTools2 : MonoBehaviour
         phView = GetComponent<PhotonView>();
 
         gc = FindObjectOfType(typeof(GameController)) as GameController;
+        nt = FindObjectOfType(typeof(NoteTrigger)) as NoteTrigger;
         symbol = FindObjectOfType(typeof(SymbolControl)) as SymbolControl;
         puzzle = FindObjectOfType(typeof(PuzzleControl)) as PuzzleControl;
         fragments = FindObjectOfType(typeof(FragmentControl)) as FragmentControl; }
@@ -120,6 +121,15 @@ public class UseTools2 : MonoBehaviour
                     hit.collider.SendMessage("OpenChest");
 
                     StartCoroutine("Amuleto");
+
+                    nt.activedContent[hit.collider.gameObject.GetComponent<NoteId>().id] = true;
+                    if (!hit.collider.gameObject.GetComponent<NoteId>().actived)
+                    {
+                        nt.notificationOn = true;
+
+                        nt.notificationSound.Play();
+                        hit.collider.gameObject.GetComponent<NoteId>().actived = true;
+                    }
 
                     hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
                     fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
