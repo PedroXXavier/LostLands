@@ -8,7 +8,7 @@ public class NoteTrigger : MonoBehaviour
     public AudioSource notificationSound;
     PhotonView view;
 
-    public GameObject[] content;
+    public GameObject[] contentPTBr, contentEN;
     public bool[] activedContent;
 
     public GameObject notification;
@@ -16,7 +16,7 @@ public class NoteTrigger : MonoBehaviour
 
     private void Start()
     {
-        activedContent= new bool[content.Length];
+        activedContent= new bool[contentPTBr.Length];
 
         view= GetComponent<PhotonView>();
 
@@ -32,37 +32,59 @@ public class NoteTrigger : MonoBehaviour
             notification.SetActive(false);
 
         if (activedContent[0]) //0
-            content[0].SetActive(true);
-        
+        {
+            contentPTBr[0].SetActive(true); contentEN[0].SetActive(true);
+        }
+
         if (activedContent[1]) //1
-            content[1].SetActive(true);
+        {
+            contentPTBr[1].SetActive(true); contentEN[1].SetActive(true);
+        }
 
         if (activedContent[2]) //2
-            content[2].SetActive(true);
+        {
+            contentPTBr[2].SetActive(true); contentEN[2].SetActive(true);
+        }
 
         if (activedContent[3]) //3
-            content[3].SetActive(true);
+        {
+            contentPTBr[3].SetActive(true); contentEN[3].SetActive(true);
+        }
 
         if (activedContent[4]) //4
-            content[4].SetActive(true);
+        {
+            contentPTBr[4].SetActive(true); contentEN[4].SetActive(true);
+        }
 
         if (activedContent[5]) //5
-            content[5].SetActive(true);
+        {
+            contentPTBr[5].SetActive(true); contentEN[5].SetActive(true);
+        }
 
         if (activedContent[6]) //6
-            content[6].SetActive(true);
+        {
+            contentPTBr[6].SetActive(true); contentEN[6].SetActive(true);
+        }
 
         if (activedContent[7]) //7
-            content[7].SetActive(true);
+        {
+            contentPTBr[7].SetActive(true); contentEN[7].SetActive(true);
+        }
 
         if (activedContent[8]) //8
-            content[8].SetActive(true);
+        {
+            contentPTBr[8].SetActive(true); contentEN[8].SetActive(true);
+        }
 
         if (activedContent[9]) //9
-            content[9].SetActive(true);
+        {
+            contentPTBr[9].SetActive(true); contentEN[9].SetActive(true);
+        }
 
         if (activedContent[10]) //10
-            content[10].SetActive(true);
+        {
+            contentPTBr[10].SetActive(true); contentEN[10].SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

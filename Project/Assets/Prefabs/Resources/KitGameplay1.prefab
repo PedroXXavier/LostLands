@@ -1555,7 +1555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7302836445437850528
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3400,7 +3400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb05e1b42e53b44428ae4e9587df3f8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e174f0ac029bbb479d05e41e5691049, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5425,7 +5425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 74429b797656795489f33e464c02c7ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8d904a8f7940dd48834eb99b69c1198, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5770,7 +5770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7614627051980376779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6992,7 +6992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37d9fc56ecea92e4e8a39539b15db0bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28e6acc1a60a3dc439776a65ff5df7b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9783,7 +9783,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4555764003008695242}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9793,7 +9793,7 @@ RectTransform:
   - {fileID: 1988048016663865727}
   m_Father: {fileID: 6929965232778978838}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -14163,7 +14163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 408, y: -254}
+  m_AnchoredPosition: {x: 414, y: -254}
   m_SizeDelta: {x: 684.5078, y: 288.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8777936315882784520
@@ -14194,7 +14194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: deb63bfa21624534a803b30b5ac9b998, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eebed5839d7f2349848c085d01e9fbd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14586,7 +14586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2b86eba126d06640976a92e5840d315, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30e2d2c57ba48db458da38ba99c90d98, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -16415,7 +16415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 753ee028fada9564ea075bb6ab97d60a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a84557e7107ad2749a65c77f44f35987, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -18030,9 +18030,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8938496525767401586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5889825818679617209}
@@ -21329,7 +21329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notificationSound: {fileID: 8749078078656514780}
-  content:
+  contentPTBr:
   - {fileID: 5812310893856483681}
   - {fileID: 2432108623969397344}
   - {fileID: 3185416871360022652}
@@ -21341,7 +21341,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  activedContent: 
+  contentEN:
+  - {fileID: 5412242390921065298}
+  - {fileID: 8564160675755004443}
+  - {fileID: 3523921647760325276}
+  - {fileID: 8366870684362185799}
+  - {fileID: 2862886587290472273}
+  - {fileID: 6995344472430809141}
+  - {fileID: 2522669724439643995}
+  - {fileID: 1282971003731735579}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  activedContent: 0000000000000000000000
   notification: {fileID: 9215132285418602376}
   notificationOn: 0
 --- !u!114 &4894748797745092422
