@@ -1,0 +1,35 @@
+Key,English,Portuguese
+MainMenu.Story,Story,Historia
+MainMenu.Multiplayer,Multiplayer,Multijogador
+MainMenu.Controls,Controls,Controles
+MainMenu.Options,Options,Opcoes
+MainMenu.Credits,Credits,Creditos
+MainMenu.Quit,Quit,Sair
+,,
+MainMenu.Back,Back,Voltar
+,,
+MainMenu.Online,Online Fuc*,Online Fod*
+MainMenu.Disconnect,Disconnect,Disconectar
+MainMenu.CreateRoom,Create Room,Criar Sala
+MainMenu.RoomList,Room List,Lista de salas
+MainMenu.RandomRoom,Random Room,Sala Aleatória
+MainMenu.Join,Join,Entrar
+MainMenu.Leave,Leave,Sair
+MainMenu.Ready,Ready?,Pronto?
+MainMenu.Cancel,Cancel,Cancelar
+MainMenu.RoomName,RoomName,Nome da sala
+MainMenu.EnterRoomName,Enter Room Name,Bote o nome da sala
+MainMenu.StartGame,Start Game,Começar jogo
+MainMenu.Create,Create Room,Criar Sala
+MainMenu.PlayersEnough,Insufficient number of players,Número insuficiente de jogadores.
+,,
+MainMenu.Language,Language,Linguagem
+,,
+MainMenu.StoryInfo,The game story's cutscene,Uma cutscene da historinha do jogo
+MainMenu.MultiplayerInfo,"Join a friend to find the treasure! If you encounter any bugs, please report them.","Junte-se a um amigo para achar o tesouro! Se achar algum bug, reporte."
+,,
+MainMenu.GameDevs,GameDevs,Desenvolvedores
+MainMenu.SoundEffects,Sound Effects,Efeitos Sonoros
+,,
+MainMenu.Artist,Artist and 3D Modeler:,Atista e Modeladora 3D:
+MainMenu.Programador,Programmer:,Programador:

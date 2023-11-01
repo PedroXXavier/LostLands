@@ -22,13 +22,13 @@ namespace Assets.SimpleLocalization
 			switch (Application.systemLanguage)
 			{
 				case SystemLanguage.German:
-					LocalizationManager.Language = "English";
+					LocalizationManager.Language = "German";
 					break;
-/*				case SystemLanguage.Russian:
+				case SystemLanguage.Russian:
 					LocalizationManager.Language = "Russian";
-					break;*/
+					break;
 				default:
-					LocalizationManager.Language = "Portuguese";
+					LocalizationManager.Language = "English";
 					break;
 			}
 

@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63817d93022759543b57e795c78efe11, type: 3}
   m_Name: LocalizationSettings
   m_EditorClassIdentifier: 
-  TableId: 1Vr4WiLDUOU8D9mEQ2D5FNxcflcwUOJMFQ_kbdHyX3WM/edit#gid=0
+  TableId: 1ZNkU0oy-bmxk8WbLt9I2NQ3H9sMd_gtjQTxdwDQIRb4
   Sheets:
   - Name: MainMenu
     Id: 0
-    TextAsset: {fileID: 4900000, guid: cf55c05861a4d264a855e6349bef560e, type: 3}
+    TextAsset: {fileID: 4900000, guid: fe8460396781e724397e03433ee510ce, type: 3}
+  - Name: Controls
+    Id: 331980525
+    TextAsset: {fileID: 4900000, guid: 263b57dcd2e952f43b657eb9ca3a2626, type: 3}
   - Name: InGame
-    Id: 1737220255
-    TextAsset: {fileID: 4900000, guid: cf55c05861a4d264a855e6349bef560e, type: 3}
+    Id: 1674352817
+    TextAsset: {fileID: 4900000, guid: 0b967d8dedab36c4abd8ddb8d40844ad, type: 3}
   SaveFolder: {fileID: 102900000, guid: c392831e85f928548b8494fefd912562, type: 3}
