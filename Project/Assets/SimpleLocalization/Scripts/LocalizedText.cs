@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace Assets.SimpleLocalization.Scripts
@@ -6,7 +7,7 @@ namespace Assets.SimpleLocalization.Scripts
 	/// <summary>
 	/// Localize text component.
 	/// </summary>
-    //[RequireComponent(typeof(text))]
+    //[RequireComponent(typeof(Text))]
     public class LocalizedText : MonoBehaviour
     {
         public string LocalizationKey;
@@ -24,7 +25,12 @@ namespace Assets.SimpleLocalization.Scripts
 
         private void Localize()
         {
-            GetComponent<TextMeshPro>().text = LocalizationManager.Localize(LocalizationKey);
+            if(GetComponent<Text>() != null) 
+            {
+                GetComponent<Text>().text = LocalizationManager.Localize(LocalizationKey);
+            }
+            else
+                GetComponent<TextMeshProUGUI>().text = LocalizationManager.Localize(LocalizationKey);
         }
     }
 }
