@@ -2,7 +2,9 @@ using Assets.SimpleLocalization;
 using Assets.SimpleLocalization.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class MultiLanguage : MonoBehaviour
 {
@@ -19,6 +21,10 @@ public class MultiLanguage : MonoBehaviour
                 LocalizationManager.Language = "Portuguese";
                 break;
         }
+    }
+    private void Update()
+    {
+        print(LocalizationManager.Language);
     }
 
     public void ChangeLanguage(string language)

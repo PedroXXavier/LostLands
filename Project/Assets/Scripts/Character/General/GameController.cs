@@ -1,8 +1,11 @@
+using Assets.SimpleLocalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using Photon.Pun;
+using System.Diagnostics;
+using Assets.SimpleLocalization.Scripts;
 
 public enum States {
     Play, Pause, Book, Win }
@@ -25,7 +28,8 @@ public class GameController : MonoBehaviour
     public bool pauseOn;
 
     [Header("Notebook")]
-    public GameObject notebook;
+    public GameObject BrNotebook; public GameObject EnNotebook;
+    GameObject atualBook;
     public bool noteOn;
 
     public bool cursor;
@@ -42,6 +46,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (LocalizationManager.Language == "English")
+            atualBook = EnNotebook;
+        else if(LocalizationManager.Language == "Portuguese")
+            atualBook = BrNotebook;
+
         switch (states)
         { 
             case States.Play:
@@ -120,7 +129,7 @@ public class GameController : MonoBehaviour
             openBookSFX.Play();
 
             states = States.Book;
-            notebook.SetActive(true);
+            atualBook.SetActive(true);
             noteOn = true;
 
             cursor = true;
@@ -128,7 +137,7 @@ public class GameController : MonoBehaviour
         else if (Input.GetButtonDown("B") && noteOn)
         {
             states = States.Play;
-            notebook.SetActive(false);
+            atualBook.SetActive(false);
             noteOn = false;
 
             cursor = false;
