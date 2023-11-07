@@ -19722,7 +19722,7 @@ MonoBehaviour:
   PlayerListEntryPrefab: {fileID: 195212, guid: d68bf8413681d9b4aa7328277e632e3f, type: 3}
   notenoughplayerText: {fileID: 1170473507}
   fade: {fileID: 1861975694}
-  test: 0
+  test: 1
 --- !u!114 &1843124149
 MonoBehaviour:
   m_ObjectHideFlags: 0

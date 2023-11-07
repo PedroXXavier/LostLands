@@ -1,12 +1,16 @@
 Key,English,Portuguese
 InGame.PressE,to interact,para interagir
-InGame.Mapa,"Line#1
-Line#2"," 	Um mapa que achei nas coisas do pai. Ele sempre falava desse local, mas nunca o encontrou.
+InGame.Mapa,"A map that I found among my father's belongings. He always talked about this place but never found it.
 
-	Finalmente localizei. Nao sei o que me espera, mas vamos encontrar o que estamos procuramos."
+I've finally located it. I don't know what awaits me, but let's find what we've been searching for.","         Um mapa que achei nas coisas do pai. Ele sempre falava desse local, mas nunca o encontrou.
+
+        Finalmente localizei. Nao sei o que me espera, mas vamos encontrar o que estamos procuramos."
 InGame.ClosePaper,to close,para fechar
 ,,
 InGame.Continue,Continue,Continuar jogando
 InGame.Controls,Controls,Controles
 InGame.GoMenu,Back to menu,Voltar ao menu
 InGame.Quit,Quit game,Sair do jogo
+,,
+InGame.Paper21,The sequence that opens the seal engraved on the prophetic stones. Climb onto the X located at the site and follow the following sequence:,A sequencia que abre o selo gravada nas pedras profeticas. Suba no X presente no local e siga as seguinte sequencia:
+InGame.Paper22,East -> Northwest -> Northeast -> North,Leste -> Noroeste -> Nordeste -> Norte

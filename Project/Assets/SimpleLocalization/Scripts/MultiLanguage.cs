@@ -22,10 +22,6 @@ public class MultiLanguage : MonoBehaviour
                 break;
         }
     }
-    private void Update()
-    {
-        print(LocalizationManager.Language);
-    }
 
     public void ChangeLanguage(string language)
     {

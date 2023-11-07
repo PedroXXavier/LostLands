@@ -50,7 +50,7 @@ public class MenuController : MonoBehaviour
     IEnumerator ActiveSkip()
     {
         skipText.SetActive(true); canSkip= true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         skipText.SetActive(false); canSkip= false;
     }
 
