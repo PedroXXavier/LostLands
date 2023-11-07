@@ -6,12 +6,19 @@ using Unity.VisualScripting;
 
 public class MenuController : MonoBehaviour
 {
+    [Header("Inicial Fade")]
+
     public GameObject inicialFade, historiaFade;
     [SerializeField] bool menu;
     public Animator creditAnimator;
 
     public GameObject skipText;
     bool canSkip;
+
+    [Header("Online Skip")]
+
+    public GameObject showChose;
+    int playerChose;
 
     private void Update()
     {
@@ -23,6 +30,12 @@ public class MenuController : MonoBehaviour
 
         else if (Input.GetButtonDown("SkipFade") && !menu && canSkip)
             StartCoroutine("FadeToMenu");
+
+
+        if (playerChose == 2)
+        {
+            //fechar cutscene pros dois
+        }
     }
 
     public void Page1()
@@ -59,6 +72,24 @@ public class MenuController : MonoBehaviour
         historiaFade.SetActive(true);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MainMenu");
+    }
+
+
+    public void SkipButton()
+    {
+        StartCoroutine("ShowChose");
+
+        if (playerChose == 0)
+            playerChose = 1;
+        else if (playerChose == 1)
+            playerChose = 2;
+    }
+
+    IEnumerator ShowChose()
+    {
+        showChose.SetActive(true);
+        yield return new WaitForSeconds(4);
+        showChose.SetActive(false);
     }
 
     public void Quit()
