@@ -69,6 +69,13 @@ MonoBehaviour:
   - WalkSound
   - JumpSound
   - FadeRPC
+  - CloseNumber
+  - OpenNumber
+  - Fade_RPC
+  - ChangeNumber
+  - FadeToPlay
+  - ZeroNumber
+  - Map_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

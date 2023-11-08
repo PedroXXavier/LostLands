@@ -4848,7 +4848,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 952938951}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: SinglePlayer
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10530,7 +10530,6 @@ MonoBehaviour:
   historiaFade: {fileID: 1861975694}
   menu: 1
   creditAnimator: {fileID: 406299106}
-  skipText: {fileID: 0}
 --- !u!1001 &953341754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17225,7 +17224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Uma cutscene da historinha do jogo
+  m_text: "Indisposn\xEDvel"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0348efb715798a4fb17d8ceb7903909, type: 2}
   m_sharedMaterial: {fileID: -6064348318151728563, guid: c0348efb715798a4fb17d8ceb7903909, type: 2}
@@ -19722,7 +19721,8 @@ MonoBehaviour:
   PlayerListEntryPrefab: {fileID: 195212, guid: d68bf8413681d9b4aa7328277e632e3f, type: 3}
   notenoughplayerText: {fileID: 1170473507}
   fade: {fileID: 1861975694}
-  test: 1
+  map: cutcine
+  test: 0
 --- !u!114 &1843124149
 MonoBehaviour:
   m_ObjectHideFlags: 0

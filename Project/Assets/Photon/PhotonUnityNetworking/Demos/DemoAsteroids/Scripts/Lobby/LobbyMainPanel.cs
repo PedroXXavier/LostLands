@@ -284,6 +284,7 @@ namespace Photon.Pun.Demo.Asteroids
         bool activeTimer;
 
         public GameObject notenoughplayerText, fade;
+        public string map;
 
         public bool test;
 
@@ -311,7 +312,7 @@ namespace Photon.Pun.Demo.Asteroids
 
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.LoadLevel("mapa");
+                PhotonNetwork.LoadLevel(map);
             }
         }
 

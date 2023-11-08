@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
                 break;
         }
 
-        ActicedWin();
+        ActicedWin(); //OtherPlayerDisconnect();
 
         if (cursor) {
             Cursor.visible = true;
@@ -144,6 +144,16 @@ public class GameController : MonoBehaviour
 
             if(noteTrigger.notificationOn)
                 noteTrigger.notificationOn = false;
+        }
+    }
+
+    private void OtherPlayerDisconnect()
+    {
+        if (PhotonNetwork.PlayerList.Length <= 1)
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.Disconnect();
+            PhotonNetwork.LoadLevel("MainMenu");
         }
     }
 

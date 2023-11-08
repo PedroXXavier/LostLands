@@ -20,6 +20,9 @@ MonoBehaviour:
   - Name: Controls
     Id: 331980525
     TextAsset: {fileID: 4900000, guid: 263b57dcd2e952f43b657eb9ca3a2626, type: 3}
+  - Name: Cutscene
+    Id: 312273000
+    TextAsset: {fileID: 4900000, guid: 0326bb0b1d4db6844883fb28584c0507, type: 3}
   - Name: InGame
     Id: 1674352817
     TextAsset: {fileID: 4900000, guid: 0b967d8dedab36c4abd8ddb8d40844ad, type: 3}
