@@ -1,22 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
+using Photon.Pun;
 
 public class AutoLeaveCutscene : MonoBehaviour
 {
+    PhotonView phView;
     public GameObject fade;
 
+    [SerializeField] int type;
+
     void Start() {
-        StartCoroutine("Fade");
+        phView= GetComponent<PhotonView>();
+
+        if (type == 0)
+            StartCoroutine("Fade");
+        else if (type == 1)
+            SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator Fade()
     {
-        fade.SetActive(true);
+        phView.RPC("FadeToPlay", RpcTarget.AllBuffered);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("MainMenu");
+        PhotonNetwork.LoadLevel("mapa");
+    }
+
+    [PunRPC]
+    private void FadeToPlay()
+    {
+        fade.SetActive(true);
     }
 }
