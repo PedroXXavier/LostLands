@@ -11,9 +11,15 @@ public class AutoLeaveCutscene : MonoBehaviour
     PhotonView phView;
     public GameObject fade;
 
+    [SerializeField] int type;
+
     void Start() {
-        StartCoroutine("Fade");
-        phView= GetComponent<PhotonView>(); 
+        phView= GetComponent<PhotonView>();
+
+        if (type == 0)
+            StartCoroutine("Fade");
+        else if (type == 1)
+            SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator Fade()

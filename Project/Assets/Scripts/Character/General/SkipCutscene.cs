@@ -32,17 +32,16 @@ public class SkipCutscene : MonoBehaviour
         if (Input.GetButtonUp("Skip") && canSpace && !canSkip)
             StartCoroutine("CursorLol");
 
-        if (playerChose == 2)
-            StartCoroutine("FadeToPlay");
-
         if (Input.GetButtonUp("Skip") && canSpace && !canSkip)
             StartCoroutine("CanSkipTrue");
     }
 
     public void SkipButton()
     {
-        if(canSkip) 
+        if(canSkip)
+        {
             StartCoroutine("ShowChose");
+        }
     }
 
     IEnumerator CanSkipTrue()
@@ -108,6 +107,7 @@ public class SkipCutscene : MonoBehaviour
         else if (playerChose == 1)
         {
             playerChose = 2; numberText.GetComponent<TextMeshProUGUI>().text = "2/2";
+            StartCoroutine("FadeToPlay");
         }
     }
 
