@@ -7,7 +7,7 @@ using TMPro;
 
 public enum Tool1
 {
-    Hand, Pickaxe, Map
+    Hand, Pickaxe, Compass, Map
 }
 
 public class UseTools1 : MonoBehaviour
@@ -30,6 +30,9 @@ public class UseTools1 : MonoBehaviour
     [Header("Pickaxe")]
     public GameObject pickaxe; public GameObject handPickaxe;
     public Animator pickaxeAnim;
+
+    [Header("Compass")]
+    public GameObject compass; public GameObject hudCompass; public GameObject handCompass;
 
     public AudioSource hitPickaxeSFX;
     public AudioSource hitNothingSFX;
@@ -157,26 +160,27 @@ public class UseTools1 : MonoBehaviour
         switch (tools)
             {
             case Tool1.Hand:
-                pickaxe.SetActive(false); map.SetActive(false);
+                pickaxe.SetActive(false); map.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
                 break;
 
             case Tool1.Pickaxe:
-                pickaxe.SetActive(true); map.SetActive(false);
+                pickaxe.SetActive(true); map.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
 
-                if (Input.GetButtonDown("Fire1"))
-                {
+                if (Input.GetButtonDown("Fire1")) {
                     pickaxeAnim.SetTrigger("Trigger");
-                    hitNothingSFX.Play();
-                }
-                if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract"))
-                {
+                    hitNothingSFX.Play(); }
+                if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract")) {
                     hit.collider.GetComponent<Rock>().Pickaxe();
-                    hitPickaxeSFX.Play();
-                }
+                    hitPickaxeSFX.Play(); }
+                break;
+
+            case Tool1.Compass:
+                compass.SetActive(true); hudCompass.SetActive(true);
+                pickaxe.SetActive(false); map.SetActive(false);
                 break;
 
             case Tool1.Map:
-                map.SetActive(true); pickaxe.SetActive(false);
+                map.SetActive(true); pickaxe.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
                 break;
         }
     }
@@ -196,6 +200,23 @@ public class UseTools1 : MonoBehaviour
                 phView.RPC("Enable_Pickaxe_RPC", RpcTarget.AllBuffered);
             }
         }
+
+        if (Input.GetButtonDown("Two")) //Compass
+        {
+            if (tools == Tool1.Compass)
+            {
+                tools = Tool1.Hand;
+                phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
+            }
+            else
+            {
+                phView.RPC("Enable_Compass_RPC", RpcTarget.AllBuffered);
+
+                phView.RPC("Disable_Pickaxe_RPC", RpcTarget.AllBuffered);
+                tools = Tool1.Compass;
+            }
+        }
+
         if (Input.GetButtonDown("Three")) //Map
         {
             if (tools == Tool1.Map)
@@ -218,6 +239,18 @@ public class UseTools1 : MonoBehaviour
     private void Disable_Pickaxe_RPC()
     {
         handPickaxe.SetActive(false);
+    }
+
+
+    [PunRPC]
+    private void Enable_Compass_RPC()
+    {
+        handCompass.SetActive(true);
+    }
+    [PunRPC]
+    private void Disable_Compass_RPC()
+    {
+        handCompass.SetActive(false);
     }
 
     void ClosePaper()

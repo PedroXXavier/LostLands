@@ -76,6 +76,8 @@ MonoBehaviour:
   - FadeToPlay
   - ZeroNumber
   - Map_RPC
+  - Disable_MetalDet_RPC
+  - Enable_MetalDet_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

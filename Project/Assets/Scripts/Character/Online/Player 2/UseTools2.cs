@@ -7,7 +7,7 @@ using TMPro;
 
 public enum Tool2
 {
-    Hand, Shovel, Compass, Luneta
+    Hand, Shovel, MetalDet, Luneta
 }
 
 public class UseTools2 : MonoBehaviour
@@ -34,8 +34,9 @@ public class UseTools2 : MonoBehaviour
     public AudioSource hitShovelSFX;
     public AudioSource hitNothingSFX;
 
-    [Header("Compass")]
-    public GameObject compass; public GameObject hudCompass; public GameObject handCompass;
+    [Header("Metal Detector")]
+    public GameObject metalDet; public GameObject handMetalDet;
+    public AudioSource metalDetSFX;
 
     [Header("Luneta")]
     public GameObject luneta; public GameObject hudLuneta; public GameObject zoomCam;
@@ -58,7 +59,7 @@ public class UseTools2 : MonoBehaviour
     {
         if (phView.IsMine)
         {
-            handCompass.SetActive(false);
+            //handCompass.SetActive(false);
             handLuneta.SetActive(false);
             handShovel.SetActive(false);
         }
@@ -168,12 +169,11 @@ public class UseTools2 : MonoBehaviour
         switch (tools)
         {
             case Tool2.Hand:
-                shovel.SetActive(false); luneta.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
+                shovel.SetActive(false); luneta.SetActive(false); /*compass.SetActive(false); hudCompass.SetActive(false);*/
                 break;
 
             case Tool2.Shovel:
-                shovel.SetActive(true);
-                compass.SetActive(false); luneta.SetActive(false); hudCompass.SetActive(false);
+                shovel.SetActive(true); luneta.SetActive(false); /*hudCompass.SetActive(false); compass.SetActive(false);*/
 
                 if (Input.GetButtonDown("Fire1"))
                 {
@@ -185,17 +185,18 @@ public class UseTools2 : MonoBehaviour
                     hit.collider.SendMessage("Shovel");
                     hitShovelSFX.Play();
                 }
-
                 break;
 
-            case Tool2.Compass:
-                compass.SetActive(true); hudCompass.SetActive(true);
+            case Tool2.MetalDet:
+                metalDet.SetActive(true); handMetalDet.SetActive(true);
                 shovel.SetActive(false); luneta.SetActive(false);
+
+
                 break;
 
             case Tool2.Luneta:
                 luneta.SetActive(true);
-                shovel.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
+                shovel.SetActive(false); /*compass.SetActive(false); hudCompass.SetActive(false);*/
 
                 if (Input.GetButtonDown("Fire2"))
                 {
@@ -238,20 +239,20 @@ public class UseTools2 : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Two")) //Compass
+        if (Input.GetButtonDown("Two")) //MetalDet
         {
-            if (tools == Tool2.Compass)
+            if (tools == Tool2.MetalDet)
             {
                 tools = Tool2.Hand;
-                phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Disable_MetalDet_RPC", RpcTarget.AllBuffered);
             }
             else
             {
-                phView.RPC("Enable_Compass_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Enable_MetalDet_RPC", RpcTarget.AllBuffered);
 
                 phView.RPC("Disable_Shovel_RPC", RpcTarget.AllBuffered);
                 phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
-                tools = Tool2.Compass;
+                tools = Tool2.MetalDet;
             }
         }
 
@@ -286,6 +287,18 @@ public class UseTools2 : MonoBehaviour
 
 
     [PunRPC]
+    private void Enable_MetalDet_RPC()
+    {
+        metalDet.SetActive(true);
+    }
+    [PunRPC]
+    private void Disable_MetalDet_RPC()
+    {
+        metalDet.SetActive(false);
+    }
+
+
+    [PunRPC]
     private void Enable_Luneta_RPC()
     {
         handLuneta.SetActive(true);
@@ -294,18 +307,6 @@ public class UseTools2 : MonoBehaviour
     private void Disable_Luneta_RPC()
     {
         handLuneta.SetActive(false);
-    }
-
-
-    [PunRPC]
-    private void Enable_Compass_RPC()
-    {
-        handCompass.SetActive(true);
-    }
-    [PunRPC]
-    private void Disable_Compass_RPC()
-    {
-        handCompass.SetActive(false);
     }
 
     void ClosePaper()

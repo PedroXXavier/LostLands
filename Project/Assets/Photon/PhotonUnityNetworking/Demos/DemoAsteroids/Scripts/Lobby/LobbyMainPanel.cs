@@ -320,8 +320,10 @@ namespace Photon.Pun.Demo.Asteroids
         {
             if (test)
             {
-                activeTimer = true;
-                phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+                //activeTimer = true;
+                //phView.RPC("FadeRPC", RpcTarget.AllBuffered);
+
+                PhotonNetwork.LoadLevel("mapa");
             }
             else
             {
