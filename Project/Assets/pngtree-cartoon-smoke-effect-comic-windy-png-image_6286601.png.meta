@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 8b3b93518eb9e0247ba2d1ccce2db6f3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 193
+        width: 84
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650c77c05098135418a0381bf5f73bac
+      internalID: 621052761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 189
+        width: 71
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2dec01632c66b4cb52bb73e7f62ef2
+      internalID: 665201007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 191
+        width: 90
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985484fb977825f41844f34182d03ad1
+      internalID: 967985617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 186
+        width: 81
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbbce53de73c4f4f9b6f14080b20b98
+      internalID: 1870018105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_4
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 193
+        width: 70
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67aeb2abeaa5acb448ca1971ef07aae0
+      internalID: -630528134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_5
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 187
+        width: 101
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5125465839b0c484e824a4f05128646d
+      internalID: 167431569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_6
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 230
+        width: 158
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d908ca436a6d744bd50cd0441184cf
+      internalID: -86809737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_7
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 129
+        width: 150
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94836601b58fe44eabf0a84fa87e8f3
+      internalID: 1058086926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 186
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398b90a7b13f69f4d9b9144d4362c858
+      internalID: 1895262809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_9
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 175
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9dda02a45173f449e1cdec3f413116
+      internalID: 731253324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_10
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 44
+        width: 85
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79fcf2ce304b1a4b886bfa1a02ff919
+      internalID: 1286827770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 44
+        width: 116
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1cec8e66fb2d24793d8e2ce0575f7c
+      internalID: -493103938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_12
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 125
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018887b96594dd64baee6c0a0518a023
+      internalID: 1810104305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_13
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 139
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76738ff0fdad4924fa0042712af7cb0a
+      internalID: -1150660771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 106
+        width: 71
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee949bec9cd58034a850d6fb44255c79
+      internalID: -1763880639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_15
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 44
+        width: 75
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d428ebf6caf2444a2a7581f8bce545
+      internalID: -1435257744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_16
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 44
+        width: 78
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cc29272d1ae034a99cf830bd27b765
+      internalID: -1089263356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_17
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 97
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e014ec27908974497fdbd5811acf41
+      internalID: -1435942579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_18
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 45
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57548b2ccd71aac4dbec86c84e99307e
+      internalID: -1095328640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_19
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 44
+        width: 118
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf82ec2a24c6f3f4a90b729abcfdf273
+      internalID: -244764116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_20
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 44
+        width: 163
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c03404f6f5076498335696e8e33504
+      internalID: 218769830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7d8428c7720bbf0458376e112a80eb50
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_12: 1810104305
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_2: 967985617
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_16: -1089263356
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_5: 167431569
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_9: 731253324
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_6: -86809737
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_3: 1870018105
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_4: -630528134
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_0: 621052761
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_15: -1435257744
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_10: 1286827770
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_7: 1058086926
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_13: -1150660771
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_8: 1895262809
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_18: -1095328640
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_14: -1763880639
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_1: 665201007
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_11: -493103938
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_17: -1435942579
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_19: -244764116
+      pngtree-cartoon-smoke-effect-comic-windy-png-image_6286601_20: 218769830
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
