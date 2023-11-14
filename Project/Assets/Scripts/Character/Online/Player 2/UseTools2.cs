@@ -59,7 +59,7 @@ public class UseTools2 : MonoBehaviour
     {
         if (phView.IsMine)
         {
-            //handCompass.SetActive(false);
+            handMetalDet.SetActive(false);
             handLuneta.SetActive(false);
             handShovel.SetActive(false);
         }
@@ -191,7 +191,7 @@ public class UseTools2 : MonoBehaviour
                 metalDet.SetActive(true); handMetalDet.SetActive(true);
                 shovel.SetActive(false); luneta.SetActive(false);
 
-
+                metalDet.GetComponent<MetalDet>().actived = true;
                 break;
 
             case Tool2.Luneta:
@@ -233,7 +233,7 @@ public class UseTools2 : MonoBehaviour
                 phView.RPC("Enable_Shovel_RPC", RpcTarget.AllBuffered);
 
                 phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
-                phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
+                phView.RPC("Disable_MetalDet_RPC", RpcTarget.AllBuffered);
 
                 tools = Tool2.Shovel;
             }
@@ -244,6 +244,7 @@ public class UseTools2 : MonoBehaviour
             if (tools == Tool2.MetalDet)
             {
                 tools = Tool2.Hand;
+                metalDet.GetComponent<MetalDet>().actived = false;
                 phView.RPC("Disable_MetalDet_RPC", RpcTarget.AllBuffered);
             }
             else

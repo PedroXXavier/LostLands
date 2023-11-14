@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     public States states;
 
     [Header("Pause")]
-    public GameObject pauseBg;
+    public GameObject pause;
     public bool pauseOn;
 
     [Header("Notebook")]
@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour
         if (Input.GetButtonDown("P") && !pauseOn)
         {
             states = States.Pause;
-            pauseBg.SetActive(true);
+            pause.SetActive(true);
             pauseOn = true;
 
             cursor = true;
@@ -115,7 +115,7 @@ public class GameController : MonoBehaviour
         else if (Input.GetButtonDown("P") && pauseOn)
         {
             states = States.Play;
-            pauseBg.SetActive(false);
+            pause.SetActive(false);
             pauseOn = false;
 
             cursor = false;

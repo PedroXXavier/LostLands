@@ -15,6 +15,10 @@ TagManager:
   - PuzzleInteract
   - NoteTrigger
   - Fragment
+  - veryNearSFX
+  - nearSFX
+  - farSFX
+  - veryFarSFX
   layers:
   - Default
   - TransparentFX

@@ -51,9 +51,11 @@ public class UseTools1 : MonoBehaviour
 
     void Update()
     {
-        if(phView.IsMine) 
+        if(phView.IsMine)
+        {
+            handCompass.SetActive(false);
             handPickaxe.SetActive(false);
-
+        }
         switch (gc.states)
         {
             case States.Play:

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Emily/cutcine.unity
     guid: 2e1280f2a00c2154daa788adb78f4191
+  - enabled: 1
+    path: Assets/Scenes/Pedro/Tests.unity
+    guid: deddec6f6f6a224468819aa0fde035a4
   m_configObjects: {}

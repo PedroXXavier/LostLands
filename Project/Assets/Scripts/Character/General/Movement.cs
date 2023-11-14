@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     PhotonView phView;
 
     [Header("ToolsAnimators")]
-    public Animator pickaxe; public Animator shovel;
+    public Animator pickaxe; public Animator shovel; public Animator metalDet;
     public Animator compass; public Animator luneta;
 
     [SerializeField] bool onSloop;
@@ -106,6 +106,7 @@ public class Movement : MonoBehaviour
                     luneta.SetBool("Walking", true);
                     compass.SetBool("Walking", true);
                     shovel.SetBool("Walking", true);
+                    metalDet.SetBool("Walking", true);
 
                     bored = false;
                     boredTimer = 0;
@@ -117,6 +118,7 @@ public class Movement : MonoBehaviour
                     luneta.SetBool("Walking", false);
                     compass.SetBool("Walking", false);
                     shovel.SetBool("Walking", false);
+                    metalDet.SetBool("Walking", false);
 
                     if (!anim.GetBool("Joinha"))
                     {
