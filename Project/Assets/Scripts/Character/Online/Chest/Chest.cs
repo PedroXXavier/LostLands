@@ -16,6 +16,8 @@ public class Chest : MonoBehaviour
 
     public bool fragmentActived;
 
+    public int type;
+
     public int life = 3;
     public int id;
 

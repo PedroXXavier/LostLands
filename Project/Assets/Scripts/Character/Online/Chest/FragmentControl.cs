@@ -9,18 +9,22 @@ public class FragmentControl : MonoBehaviour
     PhotonView phView;
     public bool[] fragmentsCollected;
 
+    [SerializeField] bool galinhaCollected, indoAliCollected;
+
     public bool allFrag;
 
     private void Start() {
         phView = GetComponent<PhotonView>();
     }
 
-    private void Update()
+    public void CollectGalinha()
     {
-/*        if (fragmentsCollected[0] && fragmentsCollected[1] )
-        {
-            phView.RPC("Win", RpcTarget.AllBuffered);
-        }*/
+        phView.RPC("CollectGalinha_RPC", RpcTarget.AllBuffered);
+    }
+
+    public void CollectIndoAli()
+    {
+        phView.RPC("CollectIndoAli_RPC", RpcTarget.AllBuffered);
     }
 
     public void CollectFragment(int id)
@@ -29,14 +33,20 @@ public class FragmentControl : MonoBehaviour
     }
 
     [PunRPC]
-    private void CollectFragments_RPC(int id)
+    private void CollectGalinha_RPC(int id)
     {
-        fragmentsCollected[id] = true;
+        galinhaCollected= true;
     }
 
     [PunRPC]
-    private void Win()
+    private void CollectIndoAli_RPC(int id)
     {
-        allFrag= true;
+        indoAliCollected= true;
+    }
+
+    [PunRPC]
+    private void CollectFragments_RPC(int id)
+    {
+        fragmentsCollected[id] = true;
     }
 }

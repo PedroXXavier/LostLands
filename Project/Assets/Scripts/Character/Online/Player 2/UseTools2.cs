@@ -129,8 +129,14 @@ public class UseTools2 : MonoBehaviour
                         hit.collider.gameObject.GetComponent<NoteId>().actived = true;
                     }
 
-                    hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
-                    fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
+                    if (hit.collider.gameObject.GetComponent<Chest>().type == 0)
+                    {
+                        hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
+                        fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
+                    }
+
+                    else if (hit.collider.gameObject.GetComponent<Chest>().type == 1)
+                        fragments.CollectGalinha();
                 }
             }
         }//Chest

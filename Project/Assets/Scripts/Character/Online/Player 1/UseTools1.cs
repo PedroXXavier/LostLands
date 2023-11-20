@@ -118,15 +118,21 @@ public class UseTools1 : MonoBehaviour
 
                     nt.activedContent[hit.collider.gameObject.GetComponent<NoteId>().id] = true;
                     if (!hit.collider.gameObject.GetComponent<NoteId>().actived)
-                    {
+                    {                        
+                        hit.collider.gameObject.GetComponent<NoteId>().actived = true;
                         nt.notificationOn = true;
 
                         nt.notificationSound.Play();
-                        hit.collider.gameObject.GetComponent<NoteId>().actived = true;
                     }
 
-                    hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
-                    fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
+                    if (hit.collider.gameObject.GetComponent<Chest>().type == 0)
+                    {
+                        hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
+                        fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
+                    }
+
+                    else if (hit.collider.gameObject.GetComponent<Chest>().type == 1)
+                        fragments.CollectGalinha();
                 }
             }
         }//Chest
