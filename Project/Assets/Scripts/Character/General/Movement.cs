@@ -6,8 +6,7 @@ using Photon.Realtime;
 
 public class Movement : MonoBehaviour
 {
-    Animator anim;
-    PhotonView phView;
+    PhotonView phView; Animator anim;
 
     [Header("ToolsAnimators")]
     public Animator pickaxe; public Animator shovel; public Animator metalDet;

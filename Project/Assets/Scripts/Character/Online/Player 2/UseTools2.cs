@@ -15,6 +15,8 @@ public class UseTools2 : MonoBehaviour
     GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt;
     PhotonView phView;
 
+    public GameObject player;
+
     Tool2 tools;
 
     [Header("Amuleto")]
@@ -36,15 +38,10 @@ public class UseTools2 : MonoBehaviour
 
     [Header("Metal Detector")]
     public GameObject metalDet; public GameObject handMetalDet;
-    public AudioSource metalDetSFX;
 
     [Header("Luneta")]
     public GameObject luneta; public GameObject hudLuneta; public GameObject zoomCam;
     public Animator lunetaAnim; int lunetaOnOff; public GameObject handLuneta;
-
-    [Header("Win")]
-    public GameObject winBg;
-
 
     void Start() {
         phView = GetComponent<PhotonView>();
@@ -188,7 +185,7 @@ public class UseTools2 : MonoBehaviour
                 break;
 
             case Tool2.MetalDet:
-                metalDet.SetActive(true); handMetalDet.SetActive(true);
+                metalDet.SetActive(true);
                 shovel.SetActive(false); luneta.SetActive(false);
 
                 metalDet.GetComponent<MetalDet>().actived = true;
@@ -234,8 +231,12 @@ public class UseTools2 : MonoBehaviour
 
                 phView.RPC("Disable_Luneta_RPC", RpcTarget.AllBuffered);
                 phView.RPC("Disable_MetalDet_RPC", RpcTarget.AllBuffered);
-
                 tools = Tool2.Shovel;
+
+                player.GetComponent<MetalDetTrigger>().distanceSounds[0].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[1].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[2].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[3].SetActive(false);
             }
         }
 
@@ -244,7 +245,14 @@ public class UseTools2 : MonoBehaviour
             if (tools == Tool2.MetalDet)
             {
                 tools = Tool2.Hand;
+
                 metalDet.GetComponent<MetalDet>().actived = false;
+
+                player.GetComponent<MetalDetTrigger>().distanceSounds[0].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[1].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[2].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[3].SetActive(false);
+
                 phView.RPC("Disable_MetalDet_RPC", RpcTarget.AllBuffered);
             }
             else
@@ -271,6 +279,11 @@ public class UseTools2 : MonoBehaviour
                 phView.RPC("Disable_Shovel_RPC", RpcTarget.AllBuffered);
                 phView.RPC("Disable_Compass_RPC", RpcTarget.AllBuffered);
                 tools = Tool2.Luneta;
+
+                player.GetComponent<MetalDetTrigger>().distanceSounds[0].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[1].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[2].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[3].SetActive(false);
             }
         }
     }

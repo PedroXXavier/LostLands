@@ -29,7 +29,7 @@ public class UseTools1 : MonoBehaviour
 
     [Header("Pickaxe")]
     public GameObject pickaxe; public GameObject handPickaxe;
-    public Animator pickaxeAnim;
+    public Animator pickaxeAnim; bool canHit = true;
 
     [Header("Compass")]
     public GameObject compass; public GameObject hudCompass; public GameObject handCompass;
@@ -167,13 +167,24 @@ public class UseTools1 : MonoBehaviour
 
             case Tool1.Pickaxe:
                 pickaxe.SetActive(true); map.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
+                
+                if(canHit) 
+                {
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        StartCoroutine("PickaxeHit");
 
-                if (Input.GetButtonDown("Fire1")) {
-                    pickaxeAnim.SetTrigger("Trigger");
-                    hitNothingSFX.Play(); }
-                if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract")) {
-                    hit.collider.GetComponent<Rock>().Pickaxe();
-                    hitPickaxeSFX.Play(); }
+                        pickaxeAnim.SetTrigger("Trigger");
+                        hitNothingSFX.Play();
+                    }
+                    if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("PickaxeInteract"))
+                    {
+                        StartCoroutine("PickaxeHit");
+
+                        hit.collider.GetComponent<Rock>().Pickaxe();
+                        hitPickaxeSFX.Play();
+                    }
+                }
                 break;
 
             case Tool1.Compass:
@@ -230,6 +241,14 @@ public class UseTools1 : MonoBehaviour
             }
         }
     }
+
+    IEnumerator PickaxeHit()
+    {
+        canHit= false;
+        yield return new WaitForSeconds(0.2f);
+        canHit= true;
+    }
+
 
     [PunRPC]
     private void Enable_Pickaxe_RPC()

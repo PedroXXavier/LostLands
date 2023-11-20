@@ -17,10 +17,10 @@ public class FragmentControl : MonoBehaviour
 
     private void Update()
     {
-        if (fragmentsCollected[0] && fragmentsCollected[1])
+/*        if (fragmentsCollected[0] && fragmentsCollected[1] )
         {
             phView.RPC("Win", RpcTarget.AllBuffered);
-        }
+        }*/
     }
 
     public void CollectFragment(int id)
