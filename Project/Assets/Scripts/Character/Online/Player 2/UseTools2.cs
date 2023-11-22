@@ -21,7 +21,7 @@ public class UseTools2 : MonoBehaviour
 
     [Header("Amuleto")]
     public GameObject amu1; public GameObject amu2; public GameObject amu3;
-    public GameObject silhueta;
+    public GameObject silhueta; public GameObject notPreparedTxt;
 
     [Header("Hand")]
     public GameObject pressE;
@@ -107,6 +107,19 @@ public class UseTools2 : MonoBehaviour
                     paperType2.SetActive(true);
             }
         } //Paper
+
+        else if (Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("FinalDoor"))
+        {
+            pressE.SetActive(true);
+
+            if (Input.GetButtonDown("E"))
+            {
+                if (fragments.fragmentsCollected[0] && fragments.fragmentsCollected[1] && fragments.fragmentsCollected[2])
+                    gc.OpenWin();
+                else
+                    StartCoroutine("NotPreparedTxt");
+            }
+        } //Final door
 
         else if (Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("ShovelInteract"))
         {
@@ -346,5 +359,12 @@ public class UseTools2 : MonoBehaviour
         silhueta.SetActive(true);
         yield return new WaitForSeconds(5);
         silhueta.SetActive(false);
+    }
+
+    IEnumerator NotPreparedTxt()
+    {
+        notPreparedTxt.SetActive(true);
+        yield return new WaitForSeconds(8);
+        notPreparedTxt.SetActive(false);
     }
 }

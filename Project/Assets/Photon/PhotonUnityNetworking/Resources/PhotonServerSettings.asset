@@ -80,6 +80,7 @@ MonoBehaviour:
   - Enable_MetalDet_RPC
   - CollectGalinha_RPC
   - CollectIndoAli_RPC
+  - OpenWin_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

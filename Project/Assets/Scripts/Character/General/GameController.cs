@@ -14,9 +14,7 @@ public class GameController : MonoBehaviour
 {
     PhotonView phView;
 
-    NoteTrigger noteTrigger;
-
-    FragmentControl fragmentControl;
+    NoteTrigger noteTrigger; FragmentControl fragmentControl;
     public GameObject win;
 
     public AudioSource openBookSFX;
@@ -31,6 +29,8 @@ public class GameController : MonoBehaviour
     public GameObject BrNotebook; public GameObject EnNotebook;
     GameObject atualBook;
     public bool noteOn;
+
+    [Header("Pause")]
 
     public bool cursor;
 
@@ -51,6 +51,9 @@ public class GameController : MonoBehaviour
         else if(LocalizationManager.Language == "Portuguese")
             atualBook = BrNotebook;
 
+        if(fragmentControl.openWin)
+            states= States.Win;
+
         switch (states)
         { 
             case States.Play:
@@ -63,10 +66,11 @@ public class GameController : MonoBehaviour
                 Notebook();
                 break;
             case States.Win:
+                win.SetActive(true);
                 break;
         }
 
-        ActicedWin(); //OtherPlayerDisconnect();
+        //OtherPlayerDisconnect();
 
         if (cursor) {
             Cursor.visible = true;
@@ -76,30 +80,9 @@ public class GameController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked; }
 
         if (!cursor && Input.GetButtonDown("Left Alt") && states == States.Play)
-        {
             cursor = true;
-        }
         else if (cursor && Input.GetButtonDown("Left Alt") && states == States.Play)
-        {
             cursor = false;
-        }
-
-        if(fragmentControl.allFrag)
-        {
-            cursor= true;
-            states = States.Pause;
-        }
-    }
-
-    private void ActicedWin()
-    {
-        if (fragmentControl.allFrag)
-        {
-            cursor = true;
-            states = States.Win;
-
-            win.SetActive(true);
-        }
     }
 
     public void Pause()
@@ -160,5 +143,22 @@ public class GameController : MonoBehaviour
     public void CursorOff()
     {
         cursor = false;
+    }
+
+    public void OpenWin() 
+    {
+        phView.RPC("OpenWin_RPC", RpcTarget.AllBuffered);
+    }
+
+    public void CloseWin()
+    {
+        fragmentControl.openWin = false;
+        win.SetActive(false);
+    }
+
+    [PunRPC]
+    private void OpenWin_RPC()
+    {
+        fragmentControl.openWin = true;
     }
 }

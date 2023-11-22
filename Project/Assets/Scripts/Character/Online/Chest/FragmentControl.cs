@@ -7,14 +7,38 @@ using UnityEngine;
 public class FragmentControl : MonoBehaviour
 {
     PhotonView phView;
+
+    [Header("Fragments")]
     public bool[] fragmentsCollected;
 
+    [Header("Achieviments")]
     [SerializeField] bool galinhaCollected, indoAliCollected;
 
-    public bool allFrag;
+    [Header("Win")]
+    [SerializeField] int playersChose; public GameObject playerNumberText;
+    public bool openWin; bool canChose;
 
     private void Start() {
         phView = GetComponent<PhotonView>();
+    }
+
+    public void VoteYesButton()
+    {
+        if(canChose)
+        {
+            if (playersChose == 0)
+                playersChose = 1;
+            else if (playersChose == 1)
+                playersChose = 2;
+
+            StartCoroutine("PlayersNumber");
+        }
+    }
+
+    IEnumerator PlayerNumber()
+    {
+
+        yield return new WaitForSeconds(8);
     }
 
     public void CollectGalinha()
