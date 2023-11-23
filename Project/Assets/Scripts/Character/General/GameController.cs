@@ -8,18 +8,16 @@ using System.Diagnostics;
 using Assets.SimpleLocalization.Scripts;
 
 public enum States {
-    Play, Pause, Book, Win }
+    Play, Pause, Book, Win}
 
 public class GameController : MonoBehaviour
 {
     PhotonView phView;
+    NoteTrigger noteTrigger; FragmentControl frag;
 
-    NoteTrigger noteTrigger; FragmentControl fragmentControl;
-    public GameObject win;
-
-    public AudioSource openBookSFX;
-
-    public States states;
+    public States states; 
+    
+    public bool cursor;
 
     [Header("Pause")]
     public GameObject pause;
@@ -27,20 +25,19 @@ public class GameController : MonoBehaviour
 
     [Header("Notebook")]
     public GameObject BrNotebook; public GameObject EnNotebook;
-    GameObject atualBook;
-    public bool noteOn;
+    GameObject atualBook; public bool noteOn;
+    public AudioSource openBookSFX;
 
-    [Header("Pause")]
-
-    public bool cursor;
+    [Header("Final")]
+    public GameObject win;
 
     private void Start() {
         noteTrigger = FindObjectOfType(typeof(NoteTrigger)) as NoteTrigger;
-        fragmentControl = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
+        frag = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
 
         phView = GetComponent<PhotonView>();
 
-        if (!phView.IsMine)
+        if(!phView.IsMine)
             gameObject.SetActive(false);
     }
 
@@ -50,25 +47,6 @@ public class GameController : MonoBehaviour
             atualBook = EnNotebook;
         else if(LocalizationManager.Language == "Portuguese")
             atualBook = BrNotebook;
-
-        if(fragmentControl.openWin)
-            states= States.Win;
-
-        switch (states)
-        { 
-            case States.Play:
-                Pause(); Notebook();
-                break;
-            case States.Pause:
-                Pause();
-                break;
-            case States.Book:
-                Notebook();
-                break;
-            case States.Win:
-                win.SetActive(true);
-                break;
-        }
 
         //OtherPlayerDisconnect();
 
@@ -83,6 +61,24 @@ public class GameController : MonoBehaviour
             cursor = true;
         else if (cursor && Input.GetButtonDown("Left Alt") && states == States.Play)
             cursor = false;
+
+        switch (states)
+        {
+            case States.Play:
+                Pause(); Notebook();
+                break;
+            case States.Pause:
+                Pause();
+                break;
+            case States.Book:
+                Notebook();
+                break;
+        }
+
+        if(frag.openWin)
+            win.SetActive(true);
+        else
+            win.SetActive(false);
     }
 
     public void Pause()
@@ -119,13 +115,12 @@ public class GameController : MonoBehaviour
         }
         else if (Input.GetButtonDown("B") && noteOn)
         {
-            states = States.Play;
             atualBook.SetActive(false);
-            noteOn = false;
+            noteOn = false; cursor = false;
 
-            cursor = false;
+            states = States.Play;
 
-            if(noteTrigger.notificationOn)
+            if (noteTrigger.notificationOn)
                 noteTrigger.notificationOn = false;
         }
     }
@@ -145,20 +140,37 @@ public class GameController : MonoBehaviour
         cursor = false;
     }
 
-    public void OpenWin() 
+
+
+    public void FinalVoteYes()
     {
-        phView.RPC("OpenWin_RPC", RpcTarget.AllBuffered);
+        frag.VoteYesButton();
     }
 
-    public void CloseWin()
+    public void FinalVoteCancel()
     {
-        fragmentControl.openWin = false;
-        win.SetActive(false);
+        frag.VoteCancelButton();
+    }
+
+    public void OpenWin()
+    {
+        phView.RPC("OpenWin_RPC", RpcTarget.All);
     }
 
     [PunRPC]
     private void OpenWin_RPC()
     {
-        fragmentControl.openWin = true;
+        frag.openWin = true;
+    }
+
+    public void CloseWin()
+    {
+        phView.RPC("CloseWin_RPC", RpcTarget.All);
+    }
+
+    [PunRPC]
+    private void CloseWin_RPC()
+    {
+        frag.openWin = false;
     }
 }

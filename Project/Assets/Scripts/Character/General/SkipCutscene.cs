@@ -39,9 +39,7 @@ public class SkipCutscene : MonoBehaviour
     public void SkipButton()
     {
         if(canSkip)
-        {
             StartCoroutine("ShowChose");
-        }
     }
 
     IEnumerator CanSkipTrue()

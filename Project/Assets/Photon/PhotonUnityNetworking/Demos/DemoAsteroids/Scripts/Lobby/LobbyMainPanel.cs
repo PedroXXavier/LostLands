@@ -323,7 +323,7 @@ namespace Photon.Pun.Demo.Asteroids
                 //activeTimer = true;
                 //phView.RPC("FadeRPC", RpcTarget.AllBuffered);
 
-                PhotonNetwork.LoadLevel("tests");
+                PhotonNetwork.LoadLevel("mapa");
             }
             else
             {

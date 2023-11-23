@@ -4,16 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 
 public class ButtonController : MonoBehaviourPunCallbacks
 {
     public GameObject player;
 
-    GameController gc;
+    GameController gc; FragmentControl frag;
     PhotonView phView;
 
     private void Start() {
-        gc = FindObjectOfType(typeof(GameController)) as GameController; 
+        gc = FindObjectOfType(typeof(GameController)) as GameController;
+        frag = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
         phView = GetComponent<PhotonView>(); }
 
     public void NoteOff() {
@@ -21,8 +23,6 @@ public class ButtonController : MonoBehaviourPunCallbacks
 
     public void PauseOff() {
         gc.pauseOn= false; }
-
-
 
     public void StatesPlay() {
         gc.states = States.Play; }

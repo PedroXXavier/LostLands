@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] bool onSloop;
 
-    GameController gc;
+    GameController gc; FragmentControl frag;
 
     MovementState state;
     public enum MovementState {
@@ -68,6 +68,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         gc = FindObjectOfType(typeof(GameController)) as GameController;
+        frag = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
 
         anim = GetComponent<Animator>();
         phView = GetComponent<PhotonView>();    

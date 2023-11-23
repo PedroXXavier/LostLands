@@ -12,7 +12,7 @@ public enum Tool2
 
 public class UseTools2 : MonoBehaviour
 {
-    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt;
+    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt; 
     PhotonView phView;
 
     public GameObject player;
@@ -115,7 +115,10 @@ public class UseTools2 : MonoBehaviour
             if (Input.GetButtonDown("E"))
             {
                 if (fragments.fragmentsCollected[0] && fragments.fragmentsCollected[1] && fragments.fragmentsCollected[2])
+                {
+                    gc.states = States.Win; gc.cursor = true;
                     gc.OpenWin();
+                }
                 else
                     StartCoroutine("NotPreparedTxt");
             }
@@ -185,11 +188,11 @@ public class UseTools2 : MonoBehaviour
         switch (tools)
         {
             case Tool2.Hand:
-                shovel.SetActive(false); luneta.SetActive(false); /*compass.SetActive(false); hudCompass.SetActive(false);*/
+                shovel.SetActive(false); luneta.SetActive(false); metalDet.SetActive(false);
                 break;
 
             case Tool2.Shovel:
-                shovel.SetActive(true); luneta.SetActive(false); /*hudCompass.SetActive(false); compass.SetActive(false);*/
+                shovel.SetActive(true); luneta.SetActive(false); 
 
                 if (Input.GetButtonDown("Fire1"))
                 {
@@ -212,7 +215,7 @@ public class UseTools2 : MonoBehaviour
 
             case Tool2.Luneta:
                 luneta.SetActive(true);
-                shovel.SetActive(false); /*compass.SetActive(false); hudCompass.SetActive(false);*/
+                shovel.SetActive(false); metalDet.SetActive(false);
 
                 if (Input.GetButtonDown("Fire2"))
                 {

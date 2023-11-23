@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class mCam : MonoBehaviour
 {
-    GameController gc;
+    GameController gc; FragmentControl frag;
     public PhotonView phView;
 
     [Header("Camera")]
@@ -27,6 +27,7 @@ public class mCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         gc = FindObjectOfType(typeof(GameController)) as GameController;
+        frag = FindObjectOfType(typeof(FragmentControl)) as FragmentControl;
 
         if (!phView.IsMine)
             gameObject.SetActive(false);

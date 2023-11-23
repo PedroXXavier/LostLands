@@ -81,6 +81,15 @@ MonoBehaviour:
   - CollectGalinha_RPC
   - CollectIndoAli_RPC
   - OpenWin_RPC
+  - Players_RPC
+  - PlayersNumber
+  - CancelNumber
+  - CancelNumber_RPC
+  - CloseWin_RPC
+  - WinClosed
+  - WinOpenned
+  - WinClosed_RPC
+  - WinOpenned_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
