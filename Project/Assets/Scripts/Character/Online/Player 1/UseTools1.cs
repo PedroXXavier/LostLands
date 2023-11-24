@@ -112,8 +112,7 @@ public class UseTools1 : MonoBehaviour
             {
                 if (fragments.fragmentsCollected[0] && fragments.fragmentsCollected[1] && fragments.fragmentsCollected[2])
                 {
-                    gc.states = States.Win; gc.cursor = true;
-                    gc.OpenWin();
+                    ChangeToWin(); gc.Victory();
                 }
                 else
                     StartCoroutine("NotPreparedTxt");
@@ -218,6 +217,11 @@ public class UseTools1 : MonoBehaviour
                 map.SetActive(true); pickaxe.SetActive(false); compass.SetActive(false); hudCompass.SetActive(false);
                 break;
         }
+    }
+
+    public void ChangeToWin()
+    {
+        gc.states = States.Win; gc.cursor = true;
     }
 
     void TakeTools()

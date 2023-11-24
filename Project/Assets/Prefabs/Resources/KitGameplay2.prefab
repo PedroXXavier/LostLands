@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 3130537179671944249}
   - component: {fileID: 6866704566323711258}
   - component: {fileID: 5847189086875677559}
+  - component: {fileID: 5801746733996019047}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -729,6 +730,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5801746733996019047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530253584099211095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MainMenu.Cancel
 --- !u!1 &548520150466028163
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +792,7 @@ GameObject:
   - component: {fileID: 5585735456667922640}
   - component: {fileID: 3035822526238806075}
   - component: {fileID: 2656147037828189075}
+  - component: {fileID: 8952849469469705272}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -902,6 +917,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8952849469469705272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567830073184449555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: InGame.Finish
 --- !u!1 &637330822324441068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6693,7 +6721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4387848838969124555}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: CloseWin
+        m_MethodName: FinalVoteCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6703,10 +6731,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4387848838969124555}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: FinalVoteCancel
-        m_Mode: 1
+      - m_Target: {fileID: 2210937848922988317}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6743,18 +6771,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: StatesPlay
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2210937848922988317}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7130,6 +7146,7 @@ GameObject:
   - component: {fileID: 8350202007213776394}
   - component: {fileID: 561133696642795425}
   - component: {fileID: 4610425557691303717}
+  - component: {fileID: 7315660774816602661}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -7254,6 +7271,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7315660774816602661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538002747665617908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: InGame.Prosseguir
 --- !u!1 &3547371621308860655
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,6 +7865,7 @@ GameObject:
   - component: {fileID: 2353192003789128663}
   - component: {fileID: 8144605188498570291}
   - component: {fileID: 4158746483221218238}
+  - component: {fileID: 7808070795231814965}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7960,6 +7991,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7808070795231814965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680571792973852010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: InGame.FinalPoint
 --- !u!1 &3721924384774732148
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,6 +9069,7 @@ GameObject:
   - component: {fileID: 4387848837167436237}
   - component: {fileID: 4387848837167436239}
   - component: {fileID: 4387848837167436238}
+  - component: {fileID: 5431958808493072714}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -9149,6 +9194,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5431958808493072714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387848837167436236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: InGame.PressE
 --- !u!1 &4387848837340825812
 GameObject:
   m_ObjectHideFlags: 0
@@ -15644,7 +15702,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4387848838969124555}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: CloseWin
+        m_MethodName: FinalVoteCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15654,10 +15712,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4387848838969124555}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: FinalVoteCancel
-        m_Mode: 1
+      - m_Target: {fileID: 2210937848922988317}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15694,18 +15752,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: StatesPlay
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2210937848922988317}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20142,6 +20188,7 @@ GameObject:
   - component: {fileID: 4319330756040331331}
   - component: {fileID: 2471236155663073461}
   - component: {fileID: 1109501589542277750}
+  - component: {fileID: 2724215374688343736}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -20266,6 +20313,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2724215374688343736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401599346203452833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: InGame.FinalContinue
 --- !u!1 &8434890721938453893
 GameObject:
   m_ObjectHideFlags: 0

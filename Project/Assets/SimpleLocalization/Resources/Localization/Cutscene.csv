@@ -1,4 +1,5 @@
 Key,English,Portuguese
-Cutscene.NumberOfPayers,players to skip,jogadores para pular
+Cutscene.NumberOfPlayers,players to skip,jogadores para pular
 Cutscene.Skip,Skip,Pular
 Cutscene.Leave,Leave,Sair
+Cutscene.SpaceEsc,"<< ""Space"" or ""Esc"" to skip >> ","<< ""Espaço"" ou ""Esc"" para pular >> "

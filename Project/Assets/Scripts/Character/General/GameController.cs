@@ -6,6 +6,8 @@ using UnityEngine;
 using Photon.Pun;
 using System.Diagnostics;
 using Assets.SimpleLocalization.Scripts;
+using System;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public enum States {
     Play, Pause, Book, Win}
@@ -48,7 +50,7 @@ public class GameController : MonoBehaviour
         else if(LocalizationManager.Language == "Portuguese")
             atualBook = BrNotebook;
 
-        //OtherPlayerDisconnect();
+        OtherPlayerDisconnect();
 
         if (cursor) {
             Cursor.visible = true;
@@ -74,11 +76,6 @@ public class GameController : MonoBehaviour
                 Notebook();
                 break;
         }
-
-        if(frag.openWin)
-            win.SetActive(true);
-        else
-            win.SetActive(false);
     }
 
     public void Pause()
@@ -140,7 +137,15 @@ public class GameController : MonoBehaviour
         cursor = false;
     }
 
-
+    public void Victory()
+    {
+        phView.RPC("Victory_RPC", RpcTarget.All);
+    }
+    [PunRPC]
+    void Victory_RPC()
+    {
+        win.SetActive(true); cursor = true; states = States.Win;
+    }
 
     public void FinalVoteYes()
     {
@@ -150,27 +155,5 @@ public class GameController : MonoBehaviour
     public void FinalVoteCancel()
     {
         frag.VoteCancelButton();
-    }
-
-    public void OpenWin()
-    {
-        phView.RPC("OpenWin_RPC", RpcTarget.All);
-    }
-
-    [PunRPC]
-    private void OpenWin_RPC()
-    {
-        frag.openWin = true;
-    }
-
-    public void CloseWin()
-    {
-        phView.RPC("CloseWin_RPC", RpcTarget.All);
-    }
-
-    [PunRPC]
-    private void CloseWin_RPC()
-    {
-        frag.openWin = false;
     }
 }

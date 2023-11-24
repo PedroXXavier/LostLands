@@ -14,3 +14,14 @@ InGame.Quit,Quit game,Sair do jogo
 ,,
 InGame.Paper21,The sequence that opens the seal engraved on the prophetic stones. Climb onto the X located at the site and follow the following sequence:,A sequencia que abre o selo gravada nas pedras profeticas. Suba no X presente no local e siga as seguinte sequencia:
 InGame.Paper22,East -> Northwest -> Northeast -> North,Leste -> Noroeste -> Nordeste -> Norte
+,,
+InGame.Final,want to fisish the game,querem finalizar o jogo
+InGame.PutAmulet,"I think a key is needed to open it... the outline looks a lot like that amulet, but I don't have it complete yet.","Acho que e preciso uma chave para abrir... o contorno parece muito aquele amuleto, mas nao tenho ele completo ainda."
+InGame.FinalContinue,Continue to explore,Continuar explorando
+InGame.Finish,Finish the game,Finalizar jogo
+InGame.FinalPoint,"From this point on, you can no longer go back and will finish the game's story. Do you want to finish or keep exploring?","A partir deste ponto voce nao podera mais voltar e
+ira finalizar a hisoria do jogo. 
+
+Deseja finalizar ou continuar explorando?"
+InGame.Prosseguir,Wanna proceed?,Deseja prosseguir?
+InGame.FinalPlayesChose,to finish the game,para finalizar o jogo

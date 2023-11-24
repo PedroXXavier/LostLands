@@ -20,7 +20,7 @@ public class FragmentControl : MonoBehaviour
 
     [Header("Win")]
     [SerializeField] int playersChose; public GameObject playerNumber;
-    bool canChose = true; public TMP_Text txt; public bool openWin;
+    bool canChose = true; public TMP_Text txt;
 
     public GameObject fade;
 

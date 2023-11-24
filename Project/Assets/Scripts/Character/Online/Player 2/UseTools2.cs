@@ -12,7 +12,7 @@ public enum Tool2
 
 public class UseTools2 : MonoBehaviour
 {
-    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt; 
+    GameController gc; SymbolControl symbol; PuzzleControl puzzle; FragmentControl fragments; NoteTrigger nt;
     PhotonView phView;
 
     public GameObject player;
@@ -116,8 +116,7 @@ public class UseTools2 : MonoBehaviour
             {
                 if (fragments.fragmentsCollected[0] && fragments.fragmentsCollected[1] && fragments.fragmentsCollected[2])
                 {
-                    gc.states = States.Win; gc.cursor = true;
-                    gc.OpenWin();
+                    ChangeToWin(); gc.Victory();
                 }
                 else
                     StartCoroutine("NotPreparedTxt");
@@ -236,6 +235,11 @@ public class UseTools2 : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void ChangeToWin()
+    {
+        gc.states = States.Win; gc.cursor = true;
     }
 
     void TakeTools()
