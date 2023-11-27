@@ -97,7 +97,6 @@ public class UseTools2 : MonoBehaviour
                 gc.cursor = true;
                 gc.states = States.Pause;
 
-
                 if (hit.collider.gameObject.GetComponent<Paper>().type == 1)
                 {
                     paperType1.SetActive(true);                
@@ -125,7 +124,7 @@ public class UseTools2 : MonoBehaviour
 
         else if (Physics.Raycast(transform.position, transform.forward, out hit, 2.5f) && hit.collider.CompareTag("ShovelInteract"))
         {
-            if (hit.collider.gameObject.GetComponent<Chest>().life <= 0)
+            if (hit.collider.gameObject.GetComponent<Chest>().life == 0)
             {
                 pressE.SetActive(true);
 

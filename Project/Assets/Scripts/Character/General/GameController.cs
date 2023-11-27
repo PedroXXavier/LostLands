@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
         else if(LocalizationManager.Language == "Portuguese")
             atualBook = BrNotebook;
 
-        OtherPlayerDisconnect();
+        //OtherPlayerDisconnect();
 
         if (cursor) {
             Cursor.visible = true;
@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour
         phView.RPC("OpenVictory_RPC", RpcTarget.All);
     }
     [PunRPC]
-    void OPenVictory_RPC()
+    void OpenVictory_RPC()
     {
         win.SetActive(true); cursor = true; states = States.Win;
     }

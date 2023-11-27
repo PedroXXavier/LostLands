@@ -19509,7 +19509,7 @@ MonoBehaviour:
   notenoughplayerText: {fileID: 1170473507}
   fade: {fileID: 1861975694}
   map: cutcine
-  test: 0
+  test: 1
 --- !u!114 &1843124149
 MonoBehaviour:
   m_ObjectHideFlags: 0

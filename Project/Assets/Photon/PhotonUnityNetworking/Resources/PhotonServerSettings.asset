@@ -94,6 +94,7 @@ MonoBehaviour:
   - Victory_RPC
   - CloseVictory_RPC
   - OPenVictory_RPC
+  - OpenVictory_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
