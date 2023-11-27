@@ -85,6 +85,36 @@ public class NoteTrigger : MonoBehaviour
         {
             contentPTBr[10].SetActive(true); contentEN[10].SetActive(true);
         }
+
+        if (activedContent[11]) //10
+        {
+            contentPTBr[11].SetActive(true); contentEN[11].SetActive(true);
+        }
+
+        if (activedContent[12]) //10
+        {
+            contentPTBr[12].SetActive(true); contentEN[12].SetActive(true);
+        }
+
+        if (activedContent[13]) //10
+        {
+            contentPTBr[13].SetActive(true); contentEN[13].SetActive(true);
+        }
+
+        if (activedContent[14]) //10
+        {
+            contentPTBr[14].SetActive(true); contentEN[14].SetActive(true);
+        }
+
+        if (activedContent[15]) //10
+        {
+            contentPTBr[15].SetActive(true); contentEN[15].SetActive(true);
+        }
+
+        if (activedContent[16]) //10
+        {
+            contentPTBr[16].SetActive(true); contentEN[16].SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

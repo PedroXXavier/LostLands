@@ -112,7 +112,7 @@ public class UseTools1 : MonoBehaviour
             {
                 if (fragments.fragmentsCollected[0] && fragments.fragmentsCollected[1] && fragments.fragmentsCollected[2])
                 {
-                    ChangeToWin(); gc.Victory();
+                    ChangeToWin(); gc.OpenVictory();
                 }
                 else
                     StartCoroutine("NotPreparedTxt");

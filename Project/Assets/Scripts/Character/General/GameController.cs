@@ -137,14 +137,24 @@ public class GameController : MonoBehaviour
         cursor = false;
     }
 
-    public void Victory()
+    public void OpenVictory()
     {
-        phView.RPC("Victory_RPC", RpcTarget.All);
+        phView.RPC("OpenVictory_RPC", RpcTarget.All);
     }
     [PunRPC]
-    void Victory_RPC()
+    void OPenVictory_RPC()
     {
         win.SetActive(true); cursor = true; states = States.Win;
+    }
+
+    public void CloseVictory()
+    {
+        phView.RPC("CloseVictory_RPC", RpcTarget.All);
+    }
+    [PunRPC]
+    void CloseVictory_RPC()
+    {
+        win.SetActive(false); cursor = false; states = States.Play;
     }
 
     public void FinalVoteYes()
