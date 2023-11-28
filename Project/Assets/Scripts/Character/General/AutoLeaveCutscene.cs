@@ -5,17 +5,21 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using Photon.Pun;
+using UnityEngine.Rendering;
 
 public class AutoLeaveCutscene : MonoBehaviour
 {
     PhotonView phView;
-    public GameObject fade;
+    public GameObject fade; public string scene;
 
     [SerializeField] int type;
 
-    void Start() {
-        phView= GetComponent<PhotonView>();
+    private void Awake()
+    {
+        phView = GetComponent<PhotonView>();
+    }
 
+    void Start() {
         if (type == 0)
             StartCoroutine("Fade");
         else if (type == 1)
@@ -24,9 +28,9 @@ public class AutoLeaveCutscene : MonoBehaviour
 
     IEnumerator Fade()
     {
-        phView.RPC("FadeToPlay", RpcTarget.AllBuffered);
+        phView.RPC("FadeToPlay", RpcTarget.All);
         yield return new WaitForSeconds(2);
-        PhotonNetwork.LoadLevel("mapa");
+        PhotonNetwork.LoadLevel(scene);
     }
 
     [PunRPC]

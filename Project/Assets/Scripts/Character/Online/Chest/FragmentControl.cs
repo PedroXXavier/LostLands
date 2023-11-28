@@ -104,8 +104,7 @@ public class FragmentControl : MonoBehaviour
     {
         phView.RPC("Fade_RPC", RpcTarget.AllBuffered);
         yield return new WaitForSeconds(2);
-        PhotonNetwork.LoadLevel("MainMenu"); //trrocar para FinalCutscene
-        print("Foi");
+        PhotonNetwork.LoadLevel("FinalCutscene");
     }
 
     [PunRPC]
