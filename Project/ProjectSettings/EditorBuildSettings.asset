@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame/Menus/MainMenu.unity
     guid: fee7e015cf9a7c943af17e67b42b6a2b
   - enabled: 1
-    path: Assets/Scenes/Emily/mapa.unity
+    path: Assets/Scenes/InGame/Maps/mapa.unity
     guid: a8a04706798a2384eb3f0eb0babdf972
   - enabled: 1
     path: Assets/Scenes/Emily/cutcine.unity

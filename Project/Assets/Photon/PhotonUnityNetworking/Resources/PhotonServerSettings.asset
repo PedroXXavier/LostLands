@@ -95,6 +95,9 @@ MonoBehaviour:
   - CloseVictory_RPC
   - OPenVictory_RPC
   - OpenVictory_RPC
+  - ChangeText
+  - Galinha
+  - IndoAli
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -16,7 +16,7 @@ public class FragmentControl : MonoBehaviour
     public bool[] fragmentsCollected;
 
     [Header("Achieviments")]
-    [SerializeField] bool indoAliCollected; [SerializeField] bool galinhaCollected;
+    public bool indoAliCollected; public bool galinhaCollected;
 
     [Header("Win")]
     [SerializeField] int playersChose; public GameObject playerNumber;
