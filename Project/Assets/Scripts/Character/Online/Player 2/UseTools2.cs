@@ -203,6 +203,11 @@ public class UseTools2 : MonoBehaviour
                     hit.collider.SendMessage("Shovel");
                     hitShovelSFX.Play();
                 }
+
+                player.GetComponent<MetalDetTrigger>().distanceSounds[0].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[1].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[2].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[3].SetActive(false);
                 break;
 
             case Tool2.MetalDet:
@@ -233,6 +238,11 @@ public class UseTools2 : MonoBehaviour
                         hudLuneta.SetActive(false); zoomCam.SetActive(false);
                     }
                 }
+
+                player.GetComponent<MetalDetTrigger>().distanceSounds[0].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[1].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[2].SetActive(false);
+                player.GetComponent<MetalDetTrigger>().distanceSounds[3].SetActive(false);
                 break;
         }
     }
