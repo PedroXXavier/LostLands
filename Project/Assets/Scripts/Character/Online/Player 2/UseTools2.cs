@@ -27,7 +27,7 @@ public class UseTools2 : MonoBehaviour
     public GameObject pressE;
 
     [Header("Paper")]
-    public GameObject paperType1, paperType2; public TMP_Text paperText;
+    public GameObject paperType1, paperType2, paperType3; public TMP_Text paperText;
 
     [Header("Shovel")]
     public GameObject shovel; public GameObject handShovel;
@@ -54,8 +54,7 @@ public class UseTools2 : MonoBehaviour
 
     void Update()
     {
-        if (phView.IsMine)
-        {
+        if (phView.IsMine) {
             handMetalDet.SetActive(false);
             handLuneta.SetActive(false);
             handShovel.SetActive(false);
@@ -104,6 +103,8 @@ public class UseTools2 : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.GetComponent<Paper>().type == 2)
                     paperType2.SetActive(true);
+                else if (hit.collider.gameObject.GetComponent<Paper>().type == 3)
+                    paperType3.SetActive(true);
             }
         } //Paper
 
@@ -354,6 +355,7 @@ public class UseTools2 : MonoBehaviour
         {
             paperType1.SetActive(false);
             paperType2.SetActive(false);
+            paperType3.SetActive(false);
 
             gc.states = States.Play;
             gc.cursor = false;

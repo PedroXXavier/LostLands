@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6756435261816687223}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7830858600088314992
 BoxCollider:
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  actived: 0
 --- !u!1 &4480209075712725713
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +994,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6756435260750201294}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -61.977}
 --- !u!33 &6756435260539479867
 MeshFilter:
@@ -2191,6 +2192,7 @@ Transform:
   - {fileID: 6756435262167221393}
   - {fileID: 6756435261836958366}
   - {fileID: 6756435262523630352}
+  - {fileID: 6756435261706437545}
   - {fileID: 6756435261816687223}
   - {fileID: 6756435260539479860}
   - {fileID: 6756435261677051882}
@@ -6446,7 +6448,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6756435260750201294}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6756435261677051877
 MeshFilter:
@@ -6746,15 +6748,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6756435261706437544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.665, y: -28.0532, z: -3.729}
-  m_LocalScale: {x: 0.2229742, y: 0.261034, z: 1.8805847}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 40.287758, y: -68.44604, z: 11.753174}
+  m_LocalScale: {x: 0.37125194, y: 0.26103398, z: 0.928633}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6756435260725127589}
   - {fileID: 6756435262267520062}
-  m_Father: {fileID: 6756435261816687223}
-  m_RootOrder: 3
+  m_Father: {fileID: 6756435260750201294}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6756435261706437540
 MeshFilter:
@@ -7501,11 +7503,10 @@ Transform:
   - {fileID: 6756435261164419258}
   - {fileID: 6756435261541390540}
   - {fileID: 2961991141757087582}
-  - {fileID: 6756435261706437545}
   - {fileID: 2025868234036057905}
   - {fileID: 3653515952785285133}
   m_Father: {fileID: 6756435260750201294}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6756435261836958365
 GameObject:
@@ -10775,6 +10776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  actived: 0
 --- !u!1 &6756435262486664192
 GameObject:
   m_ObjectHideFlags: 0
@@ -18484,7 +18486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4746506478105865065, guid: 36650b7a95363e640baf089e71ddd972, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4746506478105865065, guid: 36650b7a95363e640baf089e71ddd972, type: 3}
       propertyPath: m_LocalScale.x
@@ -18733,6 +18735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435260615056615
 MonoBehaviour:
@@ -18859,6 +18863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435260649488779
 MonoBehaviour:
@@ -19427,6 +19433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &2174765445696200754 stripped
 Transform:
@@ -19854,6 +19862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435260788936879
 MonoBehaviour:
@@ -20380,6 +20390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &5287863752994430125 stripped
 Transform:
@@ -20399,7 +20411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127458443936622619, guid: 8ac33b2347e9f3c44b5343e4d23173f9, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4127458443936622619, guid: 8ac33b2347e9f3c44b5343e4d23173f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -20665,6 +20677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &5287863752976620442 stripped
 Transform:
@@ -21343,6 +21357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &2441520339866188312 stripped
 Transform:
@@ -21462,6 +21478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!1001 &6756435261107614881
 PrefabInstance:
@@ -21546,7 +21564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618276996203050, guid: c1915aebcf518a84f92e9cc87ca646fd, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4618276996203050, guid: c1915aebcf518a84f92e9cc87ca646fd, type: 3}
       propertyPath: m_LocalScale.x
@@ -21715,6 +21733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &2441520339790087448 stripped
 Transform:
@@ -21894,6 +21914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435261203905535
 MonoBehaviour:
@@ -23078,6 +23100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435261434593228
 MonoBehaviour:
@@ -25472,6 +25496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &2441520340269803781 stripped
 Transform:
@@ -26388,6 +26414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!1001 &6756435261989032537
 PrefabInstance:
@@ -27903,6 +27931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435262246008021
 MonoBehaviour:
@@ -28348,6 +28378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!114 &6756435262319902937
 MonoBehaviour:
@@ -29884,6 +29916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2134e58257f79e4e9aebe46eedc1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  destroyRockSFX: {fileID: 0}
   life: 3
 --- !u!4 &2441520340538957396 stripped
 Transform:

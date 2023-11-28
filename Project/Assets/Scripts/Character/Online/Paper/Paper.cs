@@ -10,8 +10,14 @@ public class Paper : MonoBehaviour
     public string content;
 
     public int type;
+    public TMP_Text localizedText;
 
     void Start() {
-        gameObject.tag = ("HandInteract"); }
+        gameObject.tag = ("HandInteract");
+    }
 
+    private void Update()
+    {
+        content = localizedText.text;
+    }
 }
