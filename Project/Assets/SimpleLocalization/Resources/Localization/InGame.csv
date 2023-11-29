@@ -24,7 +24,7 @@ ira finalizar a hisoria do jogo.
 
 Deseja finalizar ou continuar explorando?"
 InGame.Prosseguir,Wanna proceed?,Deseja prosseguir?
-InGame.FinalPlayesChose,to finish the game,para finalizar o jogo
+InGame.FinalPlayersChose,to finish the game,para finalizar o jogo
 ,,
 InGame.Papel1,XXI/VI -> An incredible discovery was announced by the king in the mountains. It seems a powerful artifact has been found and is now being studied. I heard it emanates a monstrous power; I hope this helps us.,"XXI/VI -> Foi anunciado pelo rei uma incrível descoberta entre as montanhas. Parece que um artefato poderoso foi encontrado e agora está sendo estudado. Ouvi que este emana um poder monstruoso, espero que isso nos ajude. "
 InGame.Papel2,"XXX/VI -> I'm worried. The king has gone mad since the discovery of the artifact. He expelled everyone from his castle and isolated himself to study it; if no one stops him, he will go insane.","XXX/VI -> Estou preocupado. O rei ficou maluco desde a descoberta do artefato. Ele expulsou todos de seu castelo e se isolou para estudá-lo, se ninguém parar ele, ela vai enlouquecer. "
@@ -40,5 +40,7 @@ InGame.PapelTemplo1,,
 InGame.PapelTemplo3,,
 InGame.PapelGalinha,"Leaving, on the right of the great tree, our treasure of metal.","Na saída, à direta da grande árvore, nosso tesouro de metal."
 ,,
-InGame.Paper31,"The treasure was hidden in another place. According my searchs, I find the new possible place.","O tesouro foi escondido em outro lugar. Conforme minhas pesquisas, encontrei o possivel novo local"
+InGame.Paper31,"The treasure was hidden in another place. According my searchs, I find the new possible place.","O tesouro foi escondido em outro lugar. Conforme minhas pesquisas, encontrei o possivel novo local."
 InGame.Paper32,<- Here,<- Ta aqui
+,,
+InGame.AlreadyTaken,The treasure has already been taken.,O tesouro daqui ja foi pego.

@@ -7,7 +7,6 @@ using UnityEngine;
 using Newtonsoft.Json.Bson;
 using Unity.VisualScripting;
 
-
 public class FragmentControl : MonoBehaviour
 {
     PhotonView phView;
@@ -72,6 +71,7 @@ public class FragmentControl : MonoBehaviour
         }
         else if (playersChose == 1)
         {
+            CollectIndoAli();
             playersChose = 2; txt.text = "2/2";
             StartCoroutine("FadeToCutscene");
         }
@@ -115,7 +115,6 @@ public class FragmentControl : MonoBehaviour
 
 
 
-
     public void CollectGalinha()
     {
         phView.RPC("CollectGalinha_RPC", RpcTarget.AllBuffered);
@@ -132,13 +131,13 @@ public class FragmentControl : MonoBehaviour
     }
 
     [PunRPC]
-    private void CollectGalinha_RPC(int id)
+    private void CollectGalinha_RPC()
     {
         galinhaCollected= true;
     }
 
     [PunRPC]
-    private void CollectIndoAli_RPC(int id)
+    private void CollectIndoAli_RPC()
     {
         indoAliCollected= true;
     }
