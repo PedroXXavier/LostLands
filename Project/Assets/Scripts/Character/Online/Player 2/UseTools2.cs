@@ -21,7 +21,9 @@ public class UseTools2 : MonoBehaviour
 
     [Header("Amuleto")]
     public GameObject amu1; public GameObject amu2; public GameObject amu3;
-    public GameObject silhueta; public GameObject notPreparedTxt;
+    public GameObject silhueta; public GameObject notPreparedTxt; public GameObject alreadyTakenTxt;
+
+    public GameObject galinha;
 
     [Header("Hand")]
     public GameObject pressE;
@@ -131,27 +133,28 @@ public class UseTools2 : MonoBehaviour
 
                 if (Input.GetButtonDown("E"))
                 {
-                    hit.collider.SendMessage("OpenChest");
-
-                    StartCoroutine("Amuleto");
-
                     nt.activedContent[hit.collider.gameObject.GetComponent<NoteId>().id] = true;
                     if (!hit.collider.gameObject.GetComponent<NoteId>().actived)
                     {
+                        hit.collider.SendMessage("OpenChest");
                         nt.notificationOn = true;
 
                         nt.notificationSound.Play();
                         hit.collider.gameObject.GetComponent<NoteId>().actived = true;
                     }
+                    else
+                        StartCoroutine("AlreadyTaken");
 
-                    if (hit.collider.gameObject.GetComponent<Chest>().type == 0)
-                    {
+                    if (hit.collider.gameObject.GetComponent<Chest>().type == 0) {
+                        StartCoroutine("Amuleto");
                         hit.collider.gameObject.GetComponent<Chest>().fragmentActived = true;
                         fragments.CollectFragment(hit.collider.gameObject.GetComponent<Chest>().id);
                     }
 
-                    else if (hit.collider.gameObject.GetComponent<Chest>().type == 1)
+                    else if (hit.collider.gameObject.GetComponent<Chest>().type == 1) {
+                        StartCoroutine("ShowGalinha");
                         fragments.CollectGalinha();
+                    }
                 }
             }
         }//Chest
@@ -250,6 +253,47 @@ public class UseTools2 : MonoBehaviour
     public void ChangeToWin()
     {
         gc.states = States.Win; gc.cursor = true;
+    }
+
+    void ClosePaper()
+    {
+        if (Input.GetButtonDown("E"))
+        {
+            paperType1.SetActive(false);
+            paperType2.SetActive(false);
+            paperType3.SetActive(false);
+
+            gc.states = States.Play;
+            gc.cursor = false;
+        }
+    }
+
+    IEnumerator AlreadyTaken()
+    {
+        alreadyTakenTxt.SetActive(true);
+        yield return new WaitForSeconds(5);
+        alreadyTakenTxt.SetActive(false);
+    }
+
+    IEnumerator ShowGalinha()
+    {
+        galinha.SetActive(true);
+        yield return new WaitForSeconds(7);
+        galinha.SetActive(false);
+    }
+
+    IEnumerator Amuleto()
+    {
+        silhueta.SetActive(true);
+        yield return new WaitForSeconds(7);
+        silhueta.SetActive(false);
+    }
+
+    IEnumerator NotPreparedTxt()
+    {
+        notPreparedTxt.SetActive(true);
+        yield return new WaitForSeconds(8);
+        notPreparedTxt.SetActive(false);
     }
 
     void TakeTools()
@@ -357,32 +401,5 @@ public class UseTools2 : MonoBehaviour
     private void Disable_Luneta_RPC()
     {
         handLuneta.SetActive(false);
-    }
-
-    void ClosePaper()
-    {
-        if (Input.GetButtonDown("E"))
-        {
-            paperType1.SetActive(false);
-            paperType2.SetActive(false);
-            paperType3.SetActive(false);
-
-            gc.states = States.Play;
-            gc.cursor = false;
-        }
-    }
-
-    IEnumerator Amuleto()
-    {
-        silhueta.SetActive(true);
-        yield return new WaitForSeconds(5);
-        silhueta.SetActive(false);
-    }
-
-    IEnumerator NotPreparedTxt()
-    {
-        notPreparedTxt.SetActive(true);
-        yield return new WaitForSeconds(8);
-        notPreparedTxt.SetActive(false);
     }
 }

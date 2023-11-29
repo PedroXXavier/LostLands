@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
         else if(LocalizationManager.Language == "Portuguese")
             atualBook = BrNotebook;
 
-        //OtherPlayerDisconnect();
+        OtherPlayerDisconnect();
 
         if (cursor) {
             Cursor.visible = true;
