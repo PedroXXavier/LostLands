@@ -25,7 +25,6 @@ public class FragmentControl : MonoBehaviour
 
     private void Start() {
         phView = GetComponent<PhotonView>();
-
         DontDestroyOnLoad(gameObject);
     }
 
@@ -65,13 +64,11 @@ public class FragmentControl : MonoBehaviour
     {
         playerNumber.SetActive(true);
 
-        if (playersChose == 0)
-        {
+        if (playersChose == 0) {
             playersChose = 1; txt.text = "1/2";
         }
-        else if (playersChose == 1)
-        {
-            CollectIndoAli();
+        else if (playersChose == 1) {
+            indoAliCollected= true;
             playersChose = 2; txt.text = "2/2";
             StartCoroutine("FadeToCutscene");
         }
@@ -114,34 +111,26 @@ public class FragmentControl : MonoBehaviour
     }
 
 
+    private void OnDisconnectedFromMasterServer()
+    {
+        Destroy(gameObject);
+    }
+
 
     public void CollectGalinha()
     {
         phView.RPC("CollectGalinha_RPC", RpcTarget.AllBuffered);
     }
-
-    public void CollectIndoAli()
+    [PunRPC]
+    private void CollectGalinha_RPC()
     {
-        phView.RPC("CollectIndoAli_RPC", RpcTarget.AllBuffered);
+        galinhaCollected = true;
     }
 
     public void CollectFragment(int id)
     {
         phView.RPC("CollectFragments_RPC", RpcTarget.AllBuffered, id);
     }
-
-    [PunRPC]
-    private void CollectGalinha_RPC()
-    {
-        galinhaCollected= true;
-    }
-
-    [PunRPC]
-    private void CollectIndoAli_RPC()
-    {
-        indoAliCollected= true;
-    }
-
     [PunRPC]
     private void CollectFragments_RPC(int id)
     {

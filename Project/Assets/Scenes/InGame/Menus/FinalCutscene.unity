@@ -5631,8 +5631,8 @@ Transform:
   - {fileID: 1032424365}
   - {fileID: 2126768679}
   - {fileID: 1146677324}
+  - {fileID: 241050216}
   - {fileID: 1936612461}
-  - {fileID: 1526353135}
   - {fileID: 1261509922}
   - {fileID: 1702158246}
   - {fileID: 1077887950}
@@ -5644,7 +5644,7 @@ Transform:
   - {fileID: 641526574}
   - {fileID: 1159594864}
   - {fileID: 1628930464}
-  - {fileID: 1600928947}
+  - {fileID: 1526353135}
   - {fileID: 462358984}
   - {fileID: 896678885}
   - {fileID: 2115509169}
@@ -13155,6 +13155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66072c40a60d28f4e8edb7ea687757bf, type: 3}
+--- !u!224 &241050216 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7771921135494872292, guid: 66072c40a60d28f4e8edb7ea687757bf, type: 3}
+  m_PrefabInstance: {fileID: 241050215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &242809401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24330,6 +24335,7 @@ MonoBehaviour:
   fade: {fileID: 2059852482}
   scene: MainMenu
   type: 0
+  type2: 1
 --- !u!114 &647153797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53203,7 +53209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 15165912}
-  m_RootOrder: 113
+  m_RootOrder: 125
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527118020
 GameObject:
@@ -54623,11 +54629,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1600928947 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8223044764505796383, guid: 66072c40a60d28f4e8edb7ea687757bf, type: 3}
-  m_PrefabInstance: {fileID: 241050215}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1603771669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62562,6 +62563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846858061}
   - component: {fileID: 1846858062}
+  - component: {fileID: 1846858063}
   m_Layer: 0
   m_Name: FInalCutsceneScript
   m_TagString: Untagged
@@ -62599,6 +62601,28 @@ MonoBehaviour:
   indoAli: {fileID: 1702158247}
   galinha: {fileID: 1261509923}
   collectedNumber: {fileID: 1527118022}
+--- !u!114 &1846858063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846858060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1849267665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65116,7 +65140,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 15165912}
-  m_RootOrder: 112
+  m_RootOrder: 113
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1943253254
 PrefabInstance:

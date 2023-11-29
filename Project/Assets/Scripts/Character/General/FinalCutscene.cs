@@ -8,6 +8,7 @@ using UnityEngine;
 public class FinalCutscene : MonoBehaviour
 {
     FragmentControl frag;
+
     public GameObject indoAli, galinha;
     public TMP_Text collectedNumber;
 
@@ -27,7 +28,7 @@ public class FinalCutscene : MonoBehaviour
         if (frag.galinhaCollected)
             view.RPC("Galinha", RpcTarget.All);
 
-        ChangeText();
+        view.RPC("ChangeText", RpcTarget.All);
     }
 
     [PunRPC]

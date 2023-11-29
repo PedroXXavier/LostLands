@@ -12,7 +12,7 @@ public class AutoLeaveCutscene : MonoBehaviour
     PhotonView phView;
     public GameObject fade; public string scene;
 
-    [SerializeField] int type;
+    [SerializeField] int type, type2;
 
     private void Awake()
     {
@@ -31,6 +31,9 @@ public class AutoLeaveCutscene : MonoBehaviour
         phView.RPC("FadeToPlay", RpcTarget.All);
         yield return new WaitForSeconds(2);
         PhotonNetwork.LoadLevel(scene);
+        if (type2 == 1) {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.Disconnect(); }
     }
 
     [PunRPC]
