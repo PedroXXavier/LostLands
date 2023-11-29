@@ -231,9 +231,6 @@ public class UseTools2 : MonoBehaviour
 
                 if (Input.GetButtonDown("Fire2"))
                 {
-                    //hud com o bagulho da luneta, como se fosse mine
-                    //coloca barulinho tb
-
                     if (lunetaOnOff == 0)
                     {
                         lunetaOnOff = 1;
