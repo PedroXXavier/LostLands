@@ -194,7 +194,9 @@ public class UseTools2 : MonoBehaviour
                 break;
 
             case Tool2.Shovel:
-                shovel.SetActive(true); luneta.SetActive(false); 
+                shovel.SetActive(true); luneta.SetActive(false);
+
+                hudLuneta.SetActive(false); zoomCam.SetActive(false);
 
                 if (Input.GetButtonDown("Fire1"))
                 {
@@ -216,6 +218,9 @@ public class UseTools2 : MonoBehaviour
             case Tool2.MetalDet:
                 metalDet.SetActive(true);
                 shovel.SetActive(false); luneta.SetActive(false);
+
+                hudLuneta.SetActive(false); zoomCam.SetActive(false);
+
 
                 metalDet.GetComponent<MetalDet>().actived = true;
                 break;
