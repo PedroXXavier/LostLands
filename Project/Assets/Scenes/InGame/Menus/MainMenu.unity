@@ -2856,7 +2856,6 @@ GameObject:
   - component: {fileID: 342351382}
   - component: {fileID: 342351384}
   - component: {fileID: 342351383}
-  - component: {fileID: 342351385}
   m_Layer: 5
   m_Name: PunMeteoroid
   m_TagString: Untagged
@@ -2917,7 +2916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Online Fod*
+  m_Text: Online
 --- !u!222 &342351384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2926,19 +2925,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342351381}
   m_CullTransparentMesh: 1
---- !u!114 &342351385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342351381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LocalizationKey: MainMenu.Online
 --- !u!1 &351674455
 GameObject:
   m_ObjectHideFlags: 0

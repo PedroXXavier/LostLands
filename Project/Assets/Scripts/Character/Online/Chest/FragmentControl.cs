@@ -84,6 +84,11 @@ public class FragmentControl : MonoBehaviour
             playersChose = 0; txt.text = "0/2";
         }
     }
+    
+    private void OnDisconnectedFromServer()
+    {
+        Destroy(gameObject);
+    }
 
     [PunRPC]
     private void CloseNumber()
